@@ -14,6 +14,7 @@
 		82331C2129E0E1DF00E4EE53 /* CSE335ProjectConcept1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C2029E0E1DF00E4EE53 /* CSE335ProjectConcept1Tests.swift */; };
 		82331C2B29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C2A29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITests.swift */; };
 		82331C2D29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C2C29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITestsLaunchTests.swift */; };
+		82331C3A29E0E30200E4EE53 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C3929E0E30200E4EE53 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		82331C2629E0E1DF00E4EE53 /* CSE335ProjectConcept1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSE335ProjectConcept1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82331C2A29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335ProjectConcept1UITests.swift; sourceTree = "<group>"; };
 		82331C2C29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335ProjectConcept1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		82331C3929E0E30200E4EE53 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				82331C0F29E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift */,
 				82331C1129E0E1DD00E4EE53 /* ContentView.swift */,
+				82331C3929E0E30200E4EE53 /* TestView.swift */,
 				82331C1329E0E1DF00E4EE53 /* Assets.xcassets */,
 				82331C1529E0E1DF00E4EE53 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82331C3A29E0E30200E4EE53 /* TestView.swift in Sources */,
 				82331C1229E0E1DD00E4EE53 /* ContentView.swift in Sources */,
 				82331C1029E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift in Sources */,
 			);
