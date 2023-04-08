@@ -68,6 +68,35 @@ class userRecord: Identifiable
     
     //Functions for the Task Data
     
+    func add_task( _ givenTaskName:String, _ givenClassName:String, _ givenDueDate: Date)
+    {
+        self.taskData.add_task(givenTaskName, givenClassName, givenDueDate);
+    }
+
+    func get_task(_ givenTaskName:String, _ givenCourseName:String) -> taskRecord
+    {
+        self.taskData.get_task(givenTaskName, givenCourseName)
+    }
+
+    func update_task_class(_ oldClassName:String, _ newClassName:String)
+    {
+        self.taskData.update_task_class(oldClassName, newClassName)
+    }
+
+    func edit_task( _ givenTaskName:String, _ newTaskName:String, _ newDueDate:Date)
+    {
+        self.taskData.edit_task(givenTaskName, newTaskName, newDueDate);
+    }
+    func delete_task(_ givenTaskName: String, _ givenCourseName: String)
+    {
+        self.taskData.delete_task(givenTaskName, givenCourseName)
+    }
+
+    func delete_course_tasks(_ givenCourseName: String)
+    {
+        self.taskData.delete_course_tasks(givenCourseName);
+    }
+    
     
     
 }
