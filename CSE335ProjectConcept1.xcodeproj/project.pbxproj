@@ -15,6 +15,12 @@
 		82331C2B29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C2A29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITests.swift */; };
 		82331C2D29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C2C29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITestsLaunchTests.swift */; };
 		82331C3A29E0E30200E4EE53 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C3929E0E30200E4EE53 /* TestView.swift */; };
+		82331C3D29E0E5F800E4EE53 /* userRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C3C29E0E5F800E4EE53 /* userRecord.swift */; };
+		82331C3F29E0E60D00E4EE53 /* userDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C3E29E0E60D00E4EE53 /* userDictionary.swift */; };
+		82331C4129E0E62100E4EE53 /* courseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C4029E0E62100E4EE53 /* courseRecord.swift */; };
+		82331C4329E0E63100E4EE53 /* courseDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C4229E0E63100E4EE53 /* courseDictionary.swift */; };
+		82331C4529E0E63A00E4EE53 /* taskRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C4429E0E63A00E4EE53 /* taskRecord.swift */; };
+		82331C4729E0E64400E4EE53 /* taskDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C4629E0E64400E4EE53 /* taskDictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,12 @@
 		82331C2A29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335ProjectConcept1UITests.swift; sourceTree = "<group>"; };
 		82331C2C29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335ProjectConcept1UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		82331C3929E0E30200E4EE53 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		82331C3C29E0E5F800E4EE53 /* userRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRecord.swift; sourceTree = "<group>"; };
+		82331C3E29E0E60D00E4EE53 /* userDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDictionary.swift; sourceTree = "<group>"; };
+		82331C4029E0E62100E4EE53 /* courseRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseRecord.swift; sourceTree = "<group>"; };
+		82331C4229E0E63100E4EE53 /* courseDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseDictionary.swift; sourceTree = "<group>"; };
+		82331C4429E0E63A00E4EE53 /* taskRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskRecord.swift; sourceTree = "<group>"; };
+		82331C4629E0E64400E4EE53 /* taskDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskDictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,7 @@
 		82331C0E29E0E1DD00E4EE53 /* CSE335ProjectConcept1 */ = {
 			isa = PBXGroup;
 			children = (
+				82331C3B29E0E5E500E4EE53 /* Models */,
 				82331C0F29E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift */,
 				82331C1129E0E1DD00E4EE53 /* ContentView.swift */,
 				82331C3929E0E30200E4EE53 /* TestView.swift */,
@@ -128,6 +141,19 @@
 				82331C2C29E0E1DF00E4EE53 /* CSE335ProjectConcept1UITestsLaunchTests.swift */,
 			);
 			path = CSE335ProjectConcept1UITests;
+			sourceTree = "<group>";
+		};
+		82331C3B29E0E5E500E4EE53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82331C3C29E0E5F800E4EE53 /* userRecord.swift */,
+				82331C3E29E0E60D00E4EE53 /* userDictionary.swift */,
+				82331C4029E0E62100E4EE53 /* courseRecord.swift */,
+				82331C4229E0E63100E4EE53 /* courseDictionary.swift */,
+				82331C4429E0E63A00E4EE53 /* taskRecord.swift */,
+				82331C4629E0E64400E4EE53 /* taskDictionary.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82331C3F29E0E60D00E4EE53 /* userDictionary.swift in Sources */,
+				82331C4129E0E62100E4EE53 /* courseRecord.swift in Sources */,
+				82331C4329E0E63100E4EE53 /* courseDictionary.swift in Sources */,
+				82331C4729E0E64400E4EE53 /* taskDictionary.swift in Sources */,
 				82331C3A29E0E30200E4EE53 /* TestView.swift in Sources */,
+				82331C3D29E0E5F800E4EE53 /* userRecord.swift in Sources */,
+				82331C4529E0E63A00E4EE53 /* taskRecord.swift in Sources */,
 				82331C1229E0E1DD00E4EE53 /* ContentView.swift in Sources */,
 				82331C1029E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift in Sources */,
 			);
