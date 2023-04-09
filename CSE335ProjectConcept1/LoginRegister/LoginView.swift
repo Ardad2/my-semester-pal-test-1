@@ -113,7 +113,7 @@ struct LoginView: View {
                         .cornerRadius(20)
                         .padding()
                     
-                    NavigationLink(destination:RegisterView()){
+                    NavigationLink(destination:RegisterView(userData: userData)){
 
                         
                         Text("Register")                            .font(.title2)

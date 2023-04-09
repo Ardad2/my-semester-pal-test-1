@@ -19,7 +19,6 @@ struct RegisterView: View {
     @State private var registerStatus: String = ""
     
     @State private var showPassword: Bool = false
-    @State var loginStatus: String = ""
     
     @StateObject var userData:userDictionary = userDictionary()
     
@@ -40,6 +39,9 @@ struct RegisterView: View {
                 .frame(maxWidth: .infinity)
                 .cornerRadius(20)
                 .padding()
+                
+                Text("\(registerStatus)")
+                
                 TextField("Enter username", text: $enteredUsername).padding(10).overlay {
                     RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)
                 }.padding(.horizontal)
@@ -65,7 +67,6 @@ struct RegisterView: View {
                 TextField("Enter your Last Name", text: $enteredLastName).padding(10).overlay {
                     RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)
                 }.padding(.horizontal)
-                Text("\(loginStatus)");
 
             VStack {
                     NavigationLink(destination:LoginView(userData:userData)){
@@ -123,7 +124,7 @@ struct RegisterView: View {
     func checkUsername() -> some View {
         switch (userData.check_login(username: enteredUsername, password: enteredPassword)) {
         case true: TestView()
-        default: RegisterView(loginStatus:"Invalid log-in details.", userData: userData)
+        default: RegisterView(userData: userData)
         }
     }
 }
