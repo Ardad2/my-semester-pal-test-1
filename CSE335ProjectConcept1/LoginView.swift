@@ -25,6 +25,7 @@ struct LoginView: View {
     @State private var enteredUsername: String = ""
     @State private var enteredPassword: String = ""
     @State private var showPassword: Bool = false
+    @State private var loginStatus: String = ""
     
     @State var userData:userDictionary = userDictionary()
     
@@ -48,7 +49,41 @@ struct LoginView: View {
                         
                     }.padding(10) .overlay { RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)}
                 }.padding(.horizontal)
+                
+                Text("\(loginStatus)");
 
+                HStack {
+                    Button {
+                        loginStatus = "The account \(enteredUsername) does not exist!"
+                    } label : {
+                        Text("Sign in")
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                    .frame(height: 50)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                       LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                    )
+                    .cornerRadius(20)
+                    .padding()
+                    Button {
+                        print("login action")
+                    } label : {
+                        Text("Register")
+                            .font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
+                    }
+                    .frame(height: 50)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                       LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                    )
+                    .cornerRadius(20)
+                    .padding()
+                }
                 
                 Spacer()
 
