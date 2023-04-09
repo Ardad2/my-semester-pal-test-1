@@ -7,7 +7,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
+    
+    @State private var enteredUsername: String = ""
+    @State private var enteredPassowrd: String = ""
+    
+    @State var userData:userDictionary = userDictionary()
+    
     var body: some View {
         NavigationStack {
             NavigationLink(
@@ -22,8 +28,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginView()
     }
 }

@@ -44,6 +44,18 @@ class userRecord: Identifiable
         self.lastName = newLastName;
     }
     
+    //Functions for the user
+    
+    func get_username() -> String
+    {
+        return self.username!
+    }
+    
+    func get_email() -> String
+    {
+        return self.email!
+    }
+    
     //Functions for the Course Data
     
     func add_course( _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date)

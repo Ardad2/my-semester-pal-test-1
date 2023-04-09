@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		82331C1029E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C0F29E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift */; };
-		82331C1229E0E1DD00E4EE53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C1129E0E1DD00E4EE53 /* ContentView.swift */; };
+		82331C1229E0E1DD00E4EE53 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C1129E0E1DD00E4EE53 /* LoginView.swift */; };
 		82331C1429E0E1DF00E4EE53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82331C1329E0E1DF00E4EE53 /* Assets.xcassets */; };
 		82331C1729E0E1DF00E4EE53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82331C1629E0E1DF00E4EE53 /* Preview Assets.xcassets */; };
 		82331C2129E0E1DF00E4EE53 /* CSE335ProjectConcept1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C2029E0E1DF00E4EE53 /* CSE335ProjectConcept1Tests.swift */; };
@@ -43,7 +43,7 @@
 /* Begin PBXFileReference section */
 		82331C0C29E0E1DD00E4EE53 /* CSE335ProjectConcept1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSE335ProjectConcept1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82331C0F29E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSE335ProjectConcept1App.swift; sourceTree = "<group>"; };
-		82331C1129E0E1DD00E4EE53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		82331C1129E0E1DD00E4EE53 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		82331C1329E0E1DF00E4EE53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82331C1629E0E1DF00E4EE53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82331C1C29E0E1DF00E4EE53 /* CSE335ProjectConcept1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSE335ProjectConcept1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,7 +110,7 @@
 			children = (
 				82331C3B29E0E5E500E4EE53 /* Models */,
 				82331C0F29E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift */,
-				82331C1129E0E1DD00E4EE53 /* ContentView.swift */,
+				82331C1129E0E1DD00E4EE53 /* LoginView.swift */,
 				82331C3929E0E30200E4EE53 /* TestView.swift */,
 				82331C1329E0E1DF00E4EE53 /* Assets.xcassets */,
 				82331C1529E0E1DF00E4EE53 /* Preview Content */,
@@ -293,7 +293,7 @@
 				82331C3A29E0E30200E4EE53 /* TestView.swift in Sources */,
 				82331C3D29E0E5F800E4EE53 /* userRecord.swift in Sources */,
 				82331C4529E0E63A00E4EE53 /* taskRecord.swift in Sources */,
-				82331C1229E0E1DD00E4EE53 /* ContentView.swift in Sources */,
+				82331C1229E0E1DD00E4EE53 /* LoginView.swift in Sources */,
 				82331C1029E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

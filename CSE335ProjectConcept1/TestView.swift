@@ -14,7 +14,7 @@ struct TestView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Succesfully logged in!")
         }
         .padding()
     }
