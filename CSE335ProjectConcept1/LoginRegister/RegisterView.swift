@@ -69,7 +69,25 @@ struct RegisterView: View {
                 }.padding(.horizontal)
 
             VStack {
-                    NavigationLink(destination:LoginView(userData:userData)){
+                Button(action:
+                        
+                        {
+                    if (userData.user_exists(givenUserName: enteredUsername))
+                    {
+                        registerStatus = "An account with that username already exists!"
+                    }
+                    else if (userData.email_exists(givenEmail: enteredEmail))
+                    {
+                        registerStatus = "An account with that email already exists!"
+                    }
+                    else
+                    {
+                        userData.create_new_user(username:enteredUsername, password: enteredPassword, email: enteredEmail, firstName: enteredFirstName, lastName: enteredLastName)
+                        registerStatus = "Succesfully created account \(enteredUsername)!"
+                    }
+                }
+                
+                ){
 
                         
                         Text("Sign Up")                            .font(.title2)

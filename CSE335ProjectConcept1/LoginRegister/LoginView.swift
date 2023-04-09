@@ -38,6 +38,14 @@ struct LoginView: View {
             VStack(alignment: .leading, spacing: 15)
             {
                 Spacer()
+                Text("mySemsterPal")
+                    .font(.title)
+                    .bold()
+            .frame(height: 20)
+            .frame(maxWidth: .infinity)
+            .cornerRadius(20)
+            .padding()
+                /*
                 Button {
                     userData.create_new_user(username: "Arjun", password: "Arjun", email: "arjun@gmail.com", firstName: "Arjun", lastName: "Dadhwal")
                     print("created user")
@@ -55,6 +63,9 @@ struct LoginView: View {
                 )
                 .cornerRadius(20)
                 .padding()
+                */
+                
+                
                 TextField("Enter username", text: $enteredUsername).padding(10).overlay {
                     RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)
                 }.padding(.horizontal)
