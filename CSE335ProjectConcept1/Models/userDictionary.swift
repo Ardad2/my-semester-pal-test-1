@@ -51,5 +51,19 @@ class userDictionary: ObservableObject
         return false;
     }
     
+    //
+    
+    func check_login(username: String, password: String) -> Bool
+    {
+        for users in list
+        {
+            if (users.get_username() == username && users.get_password() == password)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
     
 }

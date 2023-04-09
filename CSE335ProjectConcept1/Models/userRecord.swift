@@ -56,6 +56,11 @@ class userRecord: Identifiable
         return self.email!
     }
     
+    func get_password() -> String
+    {
+        return self.password!
+    }
+    
     //Functions for the Course Data
     
     func add_course( _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date)
