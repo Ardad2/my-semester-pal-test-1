@@ -29,11 +29,32 @@ struct LoginView: View {
     
     @State var userData:userDictionary = userDictionary()
     
+    //    func create_new_user(username: String, password: String, email:String, firstName: String, lastName: String )
+
+    
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 15)
             {
                 Spacer()
+                Button {
+                    userData.create_new_user(username: "Arjun", password: "Arjun", email: "arjun@gmail.com", firstName: "Arjun", lastName: "Dadhwal")
+                    print("created user")
+    
+                } label : {
+                    Text("Test data")
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(.white)
+                }
+                .frame(height: 50)
+                .frame(maxWidth: .infinity)
+                .background(
+                   LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                )
+                .cornerRadius(20)
+                .padding()
                 TextField("Enter username", text: $enteredUsername).padding(10).overlay {
                     RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)
                 }.padding(.horizontal)
@@ -118,8 +139,8 @@ struct LoginView: View {
     
     @ViewBuilder
     func checkUsername() -> some View {
-        switch enteredUsername {
-        case "Arjun": TestView()
+        switch (userData.check_login(username: enteredUsername, password: enteredPassword)) {
+        case true: TestView()
         default: LoginView()
         }
     }
