@@ -12,7 +12,12 @@ import SwiftUI
 struct RegisterView: View {
     
     @State private var enteredUsername: String = ""
+    @State private var enteredEmail: String = ""
     @State private var enteredPassword: String = ""
+    @State private var enteredFirstName: String = ""
+    @State private var enteredLastName: String = ""
+    @State private var registerStatus: String = ""
+    
     @State private var showPassword: Bool = false
     @State var loginStatus: String = ""
     
@@ -27,24 +32,18 @@ struct RegisterView: View {
             VStack(alignment: .leading, spacing: 15)
             {
                 Spacer()
-                Button {
-                    userData.create_new_user(username: "Arjun", password: "Arjun", email: "arjun@gmail.com", firstName: "Arjun", lastName: "Dadhwal")
-                    print("created user")
-    
-                } label : {
-                    Text("Test data")
-                        .font(.title2)
+
+                    Text("Create an Account")
+                        .font(.title)
                         .bold()
-                        .foregroundColor(.white)
-                }
                 .frame(height: 50)
                 .frame(maxWidth: .infinity)
-                .background(
-                   LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
-                )
                 .cornerRadius(20)
                 .padding()
                 TextField("Enter username", text: $enteredUsername).padding(10).overlay {
+                    RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)
+                }.padding(.horizontal)
+                TextField("Enter email addres", text: $enteredEmail).padding(10).overlay {
                     RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)
                 }.padding(.horizontal)
                 
@@ -60,61 +59,37 @@ struct RegisterView: View {
                     }.padding(10) .overlay { RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)}
                 }.padding(.horizontal)
                 
+                TextField("Enter First Name", text: $enteredFirstName).padding(10).overlay {
+                    RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)
+                }.padding(.horizontal)
+                TextField("Enter your Last Name", text: $enteredLastName).padding(10).overlay {
+                    RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)
+                }.padding(.horizontal)
                 Text("\(loginStatus)");
 
-                HStack {
-                    /*
-                    Button {
-                        if (enteredUsername == "Arjun")
-                        {
-                            //loginStatus="Succesfully logged in!"
-                            TestView()
-                        }
-                        else {
-                            loginStatus = "The account \(enteredUsername) does not exist!"
-                        }
-                    } label : {
-                        Text("Sign in")
-                            .font(.title2)
+            VStack {
+                    NavigationLink(destination:LoginView(userData:userData)){
+
+                        
+                        Text("Sign Up")                            .font(.title2)
                             .bold()
                             .foregroundColor(.white)
-                    }
-                    .frame(height: 50)
+                    }                    .frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                           LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                        )
+                        .cornerRadius(20)
+                        .padding()
+                
+                NavigationLink(destination:LoginView(userData:userData)){
+
+                    
+                    Text("Already have an account? Sign in")
+                        .foregroundColor(.black)
+                }                    .frame(height: 50)
                     .frame(maxWidth: .infinity)
-                    .background(
-                       LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
-                    )
-                    .cornerRadius(20)
-                    .padding()
-                     */
-                    
-                    NavigationLink(destination:checkUsername()){
 
-                        
-                        Text("Sign in")                            .font(.title2)
-                            .bold()
-                            .foregroundColor(.white)
-                    }                    .frame(height: 50)
-                        .frame(maxWidth: .infinity)
-                        .background(
-                           LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
-                        )
-                        .cornerRadius(20)
-                        .padding()
-                    
-                    NavigationLink(destination:RegisterView()){
-
-                        
-                        Text("Register")                            .font(.title2)
-                            .bold()
-                            .foregroundColor(.white)
-                    }                    .frame(height: 50)
-                        .frame(maxWidth: .infinity)
-                        .background(
-                           LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
-                        )
-                        .cornerRadius(20)
-                        .padding()
                     
                     /*
                     
