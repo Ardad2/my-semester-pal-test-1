@@ -53,8 +53,16 @@ struct LoginView: View {
                 Text("\(loginStatus)");
 
                 HStack {
+                    /*
                     Button {
-                        loginStatus = "The account \(enteredUsername) does not exist!"
+                        if (enteredUsername == "Arjun")
+                        {
+                            //loginStatus="Succesfully logged in!"
+                            TestView()
+                        }
+                        else {
+                            loginStatus = "The account \(enteredUsername) does not exist!"
+                        }
                     } label : {
                         Text("Sign in")
                             .font(.title2)
@@ -68,8 +76,25 @@ struct LoginView: View {
                     )
                     .cornerRadius(20)
                     .padding()
+                     */
+                    
+                    NavigationLink(destination:checkUsername()){
+                        Text("Sign in")                            .font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
+                    }                    .frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                           LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                        )
+                        .cornerRadius(20)
+                        .padding()
+                    
+                    
                     Button {
-                        print("login action")
+
+        
+                        loginStatus = "Cannot register new accounts!"
                     } label : {
                         Text("Register")
                             .font(.title2)
@@ -88,6 +113,14 @@ struct LoginView: View {
                 Spacer()
 
         }
+        }
+    }
+    
+    @ViewBuilder
+    func checkUsername() -> some View {
+        switch enteredUsername {
+        case "Arjun": TestView()
+        default: LoginView()
         }
     }
 }
