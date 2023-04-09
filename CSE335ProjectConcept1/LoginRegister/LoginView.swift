@@ -25,9 +25,9 @@ struct LoginView: View {
     @State private var enteredUsername: String = ""
     @State private var enteredPassword: String = ""
     @State private var showPassword: Bool = false
-    @State private var loginStatus: String = ""
+    @State var loginStatus: String = ""
     
-    @State var userData:userDictionary = userDictionary()
+    @StateObject var userData:userDictionary = userDictionary()
     
     //    func create_new_user(username: String, password: String, email:String, firstName: String, lastName: String )
 
@@ -100,6 +100,8 @@ struct LoginView: View {
                      */
                     
                     NavigationLink(destination:checkUsername()){
+
+                        
                         Text("Sign in")                            .font(.title2)
                             .bold()
                             .foregroundColor(.white)
@@ -111,29 +113,26 @@ struct LoginView: View {
                         .cornerRadius(20)
                         .padding()
                     
-                    
-                    Button {
+                    NavigationLink(destination:RegisterView()){
 
-        
-                        loginStatus = "Cannot register new accounts!"
-                    } label : {
-                        Text("Register")
-                            .font(.title2)
+                        
+                        Text("Register")                            .font(.title2)
                             .bold()
                             .foregroundColor(.white)
-                    }
-                    .frame(height: 50)
-                    .frame(maxWidth: .infinity)
-                    .background(
-                       LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
-                    )
-                    .cornerRadius(20)
-                    .padding()
+                    }                    .frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                           LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                        )
+                        .cornerRadius(20)
+                        .padding()
+                    
+                    
                 }
                 
                 Spacer()
 
-        }
+        }.navigationBarHidden(true) 
         }
     }
     
@@ -141,7 +140,7 @@ struct LoginView: View {
     func checkUsername() -> some View {
         switch (userData.check_login(username: enteredUsername, password: enteredPassword)) {
         case true: TestView()
-        default: LoginView()
+        default: LoginView(loginStatus:"Invalid log-in details.", userData: userData)
         }
     }
 }
