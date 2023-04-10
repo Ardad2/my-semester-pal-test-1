@@ -92,8 +92,92 @@ class userDictionary: ObservableObject
     }
     
     
-    //CourseData work
+    //Course and Task Data work
     
-    //TaskData work
+    
+    func add_course(username: String,  _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date)
+    {
+        
+        for users in list {
+            if (users.get_username() == username)
+            {
+                users.add_course(className, roomName, days, startTime, endTime)
+            }
+        }
+        
+        //self.courseData.add_course(className, roomName, days, startTime, endTime)
+    }
+    
+    func get_course(username: String, _ givenCourseName: String) -> courseRecord
+    {
+        
+        for users in list {
+            if (users.get_username() == username)
+            {
+                return users.get_course(givenCourseName)
+            }
+        }
+        
+        return list[0].get_course(givenCourseName)
+    }
+    
+    func edit_course(username:String, _ courseName:String, _ newClassName:String, _ newRoomName:String, _ newDays:[Int], _ newStartTime:Date, _ newEndTime:Date)
+    {
+        
+        for users in list {
+            if (users.get_username() == username)
+            {
+                users.edit_course(courseName, newClassName, newRoomName, newDays, newStartTime, newEndTime)
+            }
+        }
+        
+        return list[0].edit_course(courseName, newClassName, newRoomName, newDays, newStartTime, newEndTime)
+    }
+    
+    func delete_course(username:String, _ givenCourseName:String)
+    {
+        for users in list {
+            if (users.get_username() == username)
+            {
+                users.delete_course(givenCourseName)
+            }
+        }
+        
+        return list[0].delete_course(givenCourseName)
+    }
+    
+    
+    func add_task( _ givenTaskName:String, _ givenClassName:String, _ givenDueDate: Date)
+    {
+        self.taskData.add_task(givenTaskName, givenClassName, givenDueDate);
+    }
+
+    func get_task(_ givenTaskName:String, _ givenCourseName:String) -> taskRecord
+    {
+        self.taskData.get_task(givenTaskName, givenCourseName)
+    }
+
+    func update_task_class(_ oldClassName:String, _ newClassName:String)
+    {
+        self.taskData.update_task_class(oldClassName, newClassName)
+    }
+
+    func edit_task( _ givenTaskName:String, _ newTaskName:String, _ newDueDate:Date)
+    {
+        self.taskData.edit_task(givenTaskName, newTaskName, newDueDate);
+    }
+    func delete_task(_ givenTaskName: String, _ givenCourseName: String)
+    {
+        self.taskData.delete_task(givenTaskName, givenCourseName)
+    }
+
+    func delete_course_tasks(_ givenCourseName: String)
+    {
+        self.taskData.delete_course_tasks(givenCourseName);
+    }
+    
+    
+    
+ 
     
 }
