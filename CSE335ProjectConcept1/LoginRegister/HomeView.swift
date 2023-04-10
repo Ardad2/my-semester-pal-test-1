@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct TestView: View {
+struct HomeView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")

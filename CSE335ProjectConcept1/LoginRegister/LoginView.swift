@@ -150,7 +150,7 @@ struct LoginView: View {
     @ViewBuilder
     func checkUsername() -> some View {
         switch (userData.check_login(username: enteredUsername, password: enteredPassword)) {
-        case true: TestView()
+        case true: HomeView()
         default: LoginView(loginStatus:"Invalid log-in details.", userData: userData)
         }
     }

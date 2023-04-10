@@ -141,7 +141,7 @@ struct RegisterView: View {
     @ViewBuilder
     func checkUsername() -> some View {
         switch (userData.check_login(username: enteredUsername, password: enteredPassword)) {
-        case true: TestView()
+        case true: HomeView()
         default: RegisterView(userData: userData)
         }
     }
