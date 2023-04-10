@@ -25,7 +25,7 @@ struct HomeView: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 NavigationLink(
-                    destination: LoginView(),
+                    destination: MyCoursesView(userData:userData, currUsername: currUsername),
                     label: {
                         Text("My Courses")
                     }).buttonStyle(.borderedProminent)
