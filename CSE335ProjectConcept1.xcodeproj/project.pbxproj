@@ -23,6 +23,7 @@
 		82331C4729E0E64400E4EE53 /* taskDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C4629E0E64400E4EE53 /* taskDictionary.swift */; };
 		82331C4929E25ECD00E4EE53 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C4829E25ECD00E4EE53 /* RegisterView.swift */; };
 		82331C6129E47C4100E4EE53 /* MyCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C6029E47C4100E4EE53 /* MyCoursesView.swift */; };
+		82331C6529E4800300E4EE53 /* courseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C6429E4800300E4EE53 /* courseDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		82331C4629E0E64400E4EE53 /* taskDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskDictionary.swift; sourceTree = "<group>"; };
 		82331C4829E25ECD00E4EE53 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		82331C6029E47C4100E4EE53 /* MyCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursesView.swift; sourceTree = "<group>"; };
+		82331C6429E4800300E4EE53 /* courseDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,8 @@
 		82331C0E29E0E1DD00E4EE53 /* CSE335ProjectConcept1 */ = {
 			isa = PBXGroup;
 			children = (
+				82331C6329E47FEB00E4EE53 /* detailViews */,
+				82331C6229E47FCD00E4EE53 /* newViews */,
 				82331C3B29E0E5E500E4EE53 /* Models */,
 				82331C4A29E25FFA00E4EE53 /* LoginRegister */,
 				82331C0F29E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift */,
@@ -168,6 +172,21 @@
 				82331C4829E25ECD00E4EE53 /* RegisterView.swift */,
 			);
 			path = LoginRegister;
+			sourceTree = "<group>";
+		};
+		82331C6229E47FCD00E4EE53 /* newViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = newViews;
+			sourceTree = "<group>";
+		};
+		82331C6329E47FEB00E4EE53 /* detailViews */ = {
+			isa = PBXGroup;
+			children = (
+				82331C6429E4800300E4EE53 /* courseDetails.swift */,
+			);
+			path = detailViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +324,7 @@
 				82331C4129E0E62100E4EE53 /* courseRecord.swift in Sources */,
 				82331C4329E0E63100E4EE53 /* courseDictionary.swift in Sources */,
 				82331C4729E0E64400E4EE53 /* taskDictionary.swift in Sources */,
+				82331C6529E4800300E4EE53 /* courseDetails.swift in Sources */,
 				82331C6129E47C4100E4EE53 /* MyCoursesView.swift in Sources */,
 				82331C3A29E0E30200E4EE53 /* HomeView.swift in Sources */,
 				82331C3D29E0E5F800E4EE53 /* userRecord.swift in Sources */,
