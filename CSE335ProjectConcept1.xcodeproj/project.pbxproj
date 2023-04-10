@@ -28,6 +28,7 @@
 		82331C5729E3ABA500E4EE53 /* editTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C5529E3ABA500E4EE53 /* editTask.swift */; };
 		82331C5A29E3ABB300E4EE53 /* newTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C5829E3ABB300E4EE53 /* newTask.swift */; };
 		82331C5B29E3ABB300E4EE53 /* newCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C5929E3ABB300E4EE53 /* newCourse.swift */; };
+		82331C5D29E3AFBD00E4EE53 /* myCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C5C29E3AFBD00E4EE53 /* myCourses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		82331C5529E3ABA500E4EE53 /* editTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editTask.swift; sourceTree = "<group>"; };
 		82331C5829E3ABB300E4EE53 /* newTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newTask.swift; sourceTree = "<group>"; };
 		82331C5929E3ABB300E4EE53 /* newCourse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newCourse.swift; sourceTree = "<group>"; };
+		82331C5C29E3AFBD00E4EE53 /* myCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCourses.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,8 @@
 				82331C3B29E0E5E500E4EE53 /* Models */,
 				82331C4A29E25FFA00E4EE53 /* LoginRegister */,
 				82331C0F29E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift */,
+				82331C3929E0E30200E4EE53 /* HomeView.swift */,
+				82331C5C29E3AFBD00E4EE53 /* myCourses.swift */,
 				82331C1329E0E1DF00E4EE53 /* Assets.xcassets */,
 				82331C1529E0E1DF00E4EE53 /* Preview Content */,
 			);
@@ -177,7 +181,6 @@
 			children = (
 				82331C1129E0E1DD00E4EE53 /* LoginView.swift */,
 				82331C4829E25ECD00E4EE53 /* RegisterView.swift */,
-				82331C3929E0E30200E4EE53 /* HomeView.swift */,
 			);
 			path = LoginRegister;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				82331C4729E0E64400E4EE53 /* taskDictionary.swift in Sources */,
 				82331C3A29E0E30200E4EE53 /* HomeView.swift in Sources */,
 				82331C3D29E0E5F800E4EE53 /* userRecord.swift in Sources */,
+				82331C5D29E3AFBD00E4EE53 /* myCourses.swift in Sources */,
 				82331C5729E3ABA500E4EE53 /* editTask.swift in Sources */,
 				82331C4529E0E63A00E4EE53 /* taskRecord.swift in Sources */,
 				82331C1229E0E1DD00E4EE53 /* LoginView.swift in Sources */,
