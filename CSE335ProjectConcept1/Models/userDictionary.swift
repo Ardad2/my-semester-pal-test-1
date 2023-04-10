@@ -147,33 +147,66 @@ class userDictionary: ObservableObject
     }
     
     
-    func add_task( _ givenTaskName:String, _ givenClassName:String, _ givenDueDate: Date)
+    func add_task( username: String, _ givenTaskName:String, _ givenClassName:String, _ givenDueDate: Date)
     {
-        self.taskData.add_task(givenTaskName, givenClassName, givenDueDate);
+        for users in list {
+            if (users.get_username() == username)
+            {
+                users.add_task(givenTaskName, givenClassName, givenDueDate)
+            }
+        }
+        
+        return list[0].add_task(givenTaskName, givenClassName, givenDueDate);
     }
 
-    func get_task(_ givenTaskName:String, _ givenCourseName:String) -> taskRecord
+    func get_task(username: String, _ givenTaskName:String, _ givenCourseName:String) -> taskRecord
     {
-        self.taskData.get_task(givenTaskName, givenCourseName)
+        for users in list {
+            if (users.get_username() == username)
+            {
+                return users.get_task(givenTaskName, givenCourseName)
+            }
+        }
+        return list[0].get_task(givenTaskName, givenCourseName)
     }
 
-    func update_task_class(_ oldClassName:String, _ newClassName:String)
+    func update_task_class(username: String, _ oldClassName:String, _ newClassName:String)
     {
-        self.taskData.update_task_class(oldClassName, newClassName)
+        for users in list {
+            if (users.get_username() == username)
+            {
+                users.update_task_class(oldClassName, newClassName)
+            }
+        }
     }
 
-    func edit_task( _ givenTaskName:String, _ newTaskName:String, _ newDueDate:Date)
+    func edit_task(username: String, _ givenTaskName:String, _ newTaskName:String, _ newDueDate:Date)
     {
-        self.taskData.edit_task(givenTaskName, newTaskName, newDueDate);
+        for users in list {
+            if (users.get_username() == username)
+            {
+                users.edit_task(givenTaskName, newTaskName, newDueDate)
+            }
+        }
     }
-    func delete_task(_ givenTaskName: String, _ givenCourseName: String)
+    func delete_task(username: String, _ givenTaskName: String, _ givenCourseName: String)
     {
-        self.taskData.delete_task(givenTaskName, givenCourseName)
+        for users in list {
+            if (users.get_username() == username)
+            {
+                users.delete_task(givenTaskName, givenCourseName)
+            }
+        }
     }
 
-    func delete_course_tasks(_ givenCourseName: String)
+    func delete_course_tasks(username: String, _ givenCourseName: String)
     {
-        self.taskData.delete_course_tasks(givenCourseName);
+        for users in list {
+            if (users.get_username() == username)
+            {
+                users.delete_course_tasks(givenCourseName)
+            }
+        }
     }
     
     
