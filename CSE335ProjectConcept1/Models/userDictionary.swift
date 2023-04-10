@@ -65,5 +65,30 @@ class userDictionary: ObservableObject
         return false;
     }
     
+    //
+    
+    func get_first_name(username: String) -> String
+    {
+        var answer = ""
+        
+        for users in list {
+            if (users.get_username() == username)
+            {
+                answer = users.get_first_name();
+            }
+        }
+        return answer
+    }
+    
+    func get_user(username: String) -> userRecord!
+    {
+        for users in list {
+            if (users.get_username() == username)
+            {
+                return users
+            }
+        }
+        return nil;
+    }
     
 }

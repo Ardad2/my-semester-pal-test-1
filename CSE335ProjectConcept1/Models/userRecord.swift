@@ -61,6 +61,16 @@ class userRecord: Identifiable
         return self.password!
     }
     
+    func get_first_name() -> String
+    {
+        return self.firstName!
+    }
+    
+    func get_last_name() -> String
+    {
+        return self.lastName!
+    }
+    
     //Functions for the Course Data
     
     func add_course( _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date)
