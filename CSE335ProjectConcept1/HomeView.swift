@@ -27,7 +27,7 @@ struct HomeView: View {
                 NavigationLink(
                     destination: LoginView(),
                     label: {
-                        Text("\(currUsername)")
+                        Text("My Courses")
                     }).buttonStyle(.borderedProminent)
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
@@ -35,7 +35,7 @@ struct HomeView: View {
                 NavigationLink(
                     destination: LoginView(),
                     label: {
-                        Text("\(currUsername)")
+                        Text("Settings")
                     }).buttonStyle(.borderedProminent)
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)

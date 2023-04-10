@@ -91,4 +91,9 @@ class userDictionary: ObservableObject
         return nil;
     }
     
+    
+    //CourseData work
+    
+    //TaskData work
+    
 }
