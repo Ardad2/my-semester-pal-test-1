@@ -36,7 +36,7 @@ struct newTask: View {
                     NavigationLink(
                         //destination: homeScreen(courseData: courseData, taskData: taskData
                           //                     ),
-                        destination: LoginView(),
+                        destination: HomeView(currUsername: currUsername, userData: userData),
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)
@@ -46,7 +46,7 @@ struct newTask: View {
                     NavigationLink(
                         //destination: courseDetails(courseName: courseName, courseData: courseData, taskData: taskData
                           //                        ),
-                        destination:LoginView(),
+                        destination:courseDetails(courseName: courseName, userData: userData, currUsername: currUsername),
                         label: {
                             Text("Go Back to Course")
                         }).buttonStyle(.borderedProminent)

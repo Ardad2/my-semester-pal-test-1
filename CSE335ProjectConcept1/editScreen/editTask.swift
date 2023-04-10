@@ -15,8 +15,6 @@ struct editTask: View {
     
     
     
-    @ObservedObject var courseData:courseDictionary = courseDictionary();
-    @ObservedObject var taskData:taskDictionary = taskDictionary();
     
     @ObservedObject var userData:userDictionary = userDictionary()
     @State var currUsername: String = ""
@@ -37,7 +35,7 @@ struct editTask: View {
                 HStack {
                     NavigationLink(
                         //destination: homeScreen(courseData: courseData, taskData: taskData
-                        destination: LoginView(),
+                        destination: HomeView(currUsername: currUsername, userData: userData),
                                                //),
                         label: {
                             Text("Home")

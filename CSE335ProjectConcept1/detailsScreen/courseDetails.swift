@@ -15,7 +15,7 @@ struct courseDetails: View {
     var courseName:String
     
 
-    @ObservedObject var userData:userDictionary = userDictionary()    
+    @ObservedObject var userData:userDictionary = userDictionary()
     @State var currUsername: String = ""
 
 
@@ -26,7 +26,7 @@ struct courseDetails: View {
             VStack(){
                 HStack {
                     NavigationLink(
-                        destination: HomeView(
+                        destination: HomeView(currUsername: currUsername, userData: userData
                                                ),
                         label: {
                             Text("Home")
@@ -35,7 +35,7 @@ struct courseDetails: View {
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
                     NavigationLink(
-                        destination: HomeView(),
+                        destination: HomeView(currUsername: currUsername, userData: userData),
                         label: {
                             Text("Back")
                         }).buttonStyle(.borderedProminent)
@@ -89,7 +89,7 @@ struct courseDetails: View {
                         NavigationLink(
                             /*destination: editCourse(courseData: courseData, taskData: taskData, prevCourseName: courseName, newCourseName: courseName, newRoomName: courseData.get_course(courseName).get_room_name(), newStartTime: courseData.get_course(courseName).get_start_time(), newEndTime: courseData.get_course(courseName).get_end_time(), days: courseData.get_course(courseName).get_days() ),*/
                             
-                            destination: HomeView(),
+                            destination: editCourse(),
                             
                             
                             label: {

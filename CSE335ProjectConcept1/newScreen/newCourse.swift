@@ -15,8 +15,6 @@ struct newCourse: View {
     
     
     
-    @ObservedObject var courseData:courseDictionary = courseDictionary();
-    @ObservedObject var taskData:taskDictionary = taskDictionary();
     
     @ObservedObject var userData:userDictionary = userDictionary()
     @State var currUsername: String = ""
@@ -47,7 +45,7 @@ struct newCourse: View {
                         //destination: homeScreen(courseData: courseData, taskData: taskData
                           //                     ),
                         
-                        destination: LoginView(),
+                        destination: HomeView(currUsername: currUsername, userData: userData),
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)
@@ -58,7 +56,7 @@ struct newCourse: View {
                         //destination: myCourses(courseData: courseData, taskData: taskData
                           //                    ),
                         
-                        destination: LoginView(),
+                        destination: myCourses(userData: userData, currUsername: currUsername),
                         
                         label: {
                             Text("Go Back to Courses")
