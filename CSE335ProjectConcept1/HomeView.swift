@@ -50,7 +50,7 @@ struct HomeView: View {
                         {
                             ForEach(userData.get_user(currUsername).taskData.list)
                             {
-                                datum in NavigationLink(destination: LoginView()){VStack()
+                                datum in NavigationLink(destination: taskDetails(userData:userData, currUsername: currUsername, courseName: datum.get_class_name(), taskName: datum.get_task_name())){VStack()
                                 {
                                     HStack {
                                         Text(datum.get_task_name());
