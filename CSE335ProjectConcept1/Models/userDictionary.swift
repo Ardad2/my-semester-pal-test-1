@@ -131,7 +131,6 @@ class userDictionary: ObservableObject
             }
         }
         
-        return list[0].edit_course(courseName, newClassName, newRoomName, newDays, newStartTime, newEndTime)
     }
     
     func delete_course(_ username:String, _ givenCourseName:String)
@@ -143,7 +142,6 @@ class userDictionary: ObservableObject
             }
         }
         
-        return list[0].delete_course(givenCourseName)
     }
     
     
