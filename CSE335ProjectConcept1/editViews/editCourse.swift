@@ -48,13 +48,15 @@ struct editCourse: View {
             VStack(){
                 HStack {
                     NavigationLink(
-                        destination: HomeView(currUsername: currUsername, userData: userData),
+                        //destination: HomeView(currUsername: currUsername, userData: userData),
+                        destination: LoginView(userData: userData),
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)
                         .navigationTitle("Home")
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
+                         
                     NavigationLink(
                         /*destination: myCourses(courseData: courseData, taskData: taskData
                                               )*/

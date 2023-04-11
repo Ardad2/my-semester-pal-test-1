@@ -35,7 +35,8 @@ struct editTask: View {
                     NavigationLink(
 
                         
-                        destination: HomeView(currUsername: currUsername, userData: userData),
+                        //destination: HomeView(currUsername: currUsername, userData: userData),
+                        destination: LoginView(userData: userData),
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)
