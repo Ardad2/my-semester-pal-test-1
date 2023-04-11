@@ -9,19 +9,23 @@ import Foundation
 
 import SwiftUI
 
-struct courseDetails:View {
-    var courseName:String
+struct courseDetails: View {
     
-    @ObservedObject var userData:userDictionary = userDictionary()
+    @ObservedObject var userData:userDictionary = userDictionary();
     @State var currUsername: String
+    
+    var courseName:String
     
     var body: some View {
         NavigationView {
             VStack(){
                 HStack {
                     NavigationLink(
-                        destination: HomeView(userData: userData, currUsername: currUsername
-                                               ),
+                       /* destination: homeScreen(courseData: courseData, taskData: taskData
+                                               ),*/
+                        
+                        destination: HomeView(currUsername: currUsername, userData: userData),
+                        
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)
@@ -29,8 +33,11 @@ struct courseDetails:View {
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
                     NavigationLink(
-                        destination: MyCoursesView(userData: userData, currUsername: currUsername
-                                              ),
+                        /*destination: myCourses(courseData: courseData, taskData: taskData
+                                              ),*/
+                        
+                        destination: HomeView(currUsername: currUsername, userData: userData),
+
                         label: {
                             Text("Back")
                         }).buttonStyle(.borderedProminent)
@@ -39,16 +46,14 @@ struct courseDetails:View {
                         .navigationBarHidden(true)
                     
                 }
-                
-                
                 VStack(){
-                    Text(userData.get_user(username:currUsername).get_course(courseName).get_class_name());
-                    Text(courseData.get_course(courseName).get_room_name());
+                    Text(userData.get_course(currUsername, courseName).get_class_name());
+                    Text(userData.get_course(currUsername, courseName).get_room_name());
                     
                     HStack {
-                        Text(courseData.get_course(courseName).get_start_time_string() + " to " + courseData.get_course(courseName).get_end_time_string());
+                        Text(userData.get_course(currUsername, courseName).get_start_time_string() + " to " + userData.get_course(currUsername, courseName).get_end_time_string());
                         HStack{
-                            var days = courseData.get_course(courseName).get_days();
+                            var days = userData.get_course(currUsername, courseName).get_days();
                             if (days[0] == 1)
                             {
                                 Text("Monday ")
@@ -84,7 +89,11 @@ struct courseDetails:View {
                     
                     HStack(){
                         NavigationLink(
-                            destination: editCourse(courseData: courseData, taskData: taskData, prevCourseName: courseName, newCourseName: courseName, newRoomName: courseData.get_course(courseName).get_room_name(), newStartTime: courseData.get_course(courseName).get_start_time(), newEndTime: courseData.get_course(courseName).get_end_time(), days: courseData.get_course(courseName).get_days() ),
+                            /*destination: editCourse(courseData: courseData, taskData: taskData, prevCourseName: courseName, newCourseName: courseName, newRoomName: courseData.get_course(courseName).get_room_name(), newStartTime: courseData.get_course(courseName).get_start_time(), newEndTime: courseData.get_course(courseName).get_end_time(), days: courseData.get_course(courseName).get_days() ),*/
+                            
+                            destination: HomeView(currUsername: currUsername, userData: userData),
+
+                            
                             label: {
                                 Text("Edit Course")
                             }).buttonStyle(.borderedProminent)
@@ -93,8 +102,8 @@ struct courseDetails:View {
                             .navigationBarHidden(true)
                         
                         Button(action: {
-                            taskData.delete_course_tasks(courseName);
-                            courseData.delete_course(courseName);
+                            userData.delete_course_tasks(currUsername, courseName);
+                            userData.delete_course(currUsername, courseName);
                             
                         }, label:{Text("Delete Course")})
                         
@@ -105,7 +114,9 @@ struct courseDetails:View {
                     
                     //
                     NavigationLink(
-                        destination: newTask(courseData: courseData, taskData: taskData, courseName: self.courseName),
+                        /*destination: newTask(courseData: courseData, taskData: taskData, courseName: self.courseName),*/
+                        destination: HomeView(currUsername: currUsername, userData: userData),
+
                         label: {
                             Text("Add New Task")
                         }).buttonStyle(.borderedProminent)
@@ -116,12 +127,17 @@ struct courseDetails:View {
                     List {
                         Section(header: ListHeader2())
                         {
-                            ForEach(taskData.list)
+                            ForEach(userData.get_user(currUsername).taskData.list)
                             {
                                 datum in
                                 Group{
                                     if (datum.get_class_name() == courseName) {
-                                        NavigationLink(destination: taskDetails(courseName: courseName, taskName:datum.get_task_name(), courseData: courseData, taskData: taskData)){
+                                        NavigationLink(
+                                           /* destination: taskDetails(courseName: courseName, taskName:datum.get_task_name(), courseData: courseData, taskData: taskData)*/
+                                            destination: HomeView(currUsername: currUsername, userData: userData)
+
+                                        
+                                        ){
                                             VStack()
                                             {
                                                 HStack {
@@ -139,6 +155,14 @@ struct courseDetails:View {
                 }
             }
         }.navigationBarHidden(true)
+    }
+    
+}
+
+struct ListHeader2: View {
+    var body: some View {
+        HStack {
+            Text("TASK LIST ")
         }
     }
 }

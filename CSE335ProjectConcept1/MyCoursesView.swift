@@ -44,7 +44,7 @@ struct MyCoursesView: View {
                         List {
                             Section(header: ListHeader1())
                             {
-                                ForEach(userData.get_user(username:currUsername).courseData.list)
+                                ForEach(userData.get_user(currUsername).courseData.list)
                                 {
                                     datum in NavigationLink(destination: HomeView(currUsername: currUsername, userData: userData))
                                     {

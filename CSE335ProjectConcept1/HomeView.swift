@@ -48,7 +48,7 @@ struct HomeView: View {
                     List {
                         Section(header: ListHeader())
                         {
-                            ForEach(userData.get_user(username: currUsername).taskData.list)
+                            ForEach(userData.get_user(currUsername).taskData.list)
                             {
                                 datum in NavigationLink(destination: LoginView()){VStack()
                                 {

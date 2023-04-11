@@ -80,7 +80,7 @@ class userDictionary: ObservableObject
         return answer
     }
     
-    func get_user(username: String) -> userRecord!
+    func get_user(_ username: String) -> userRecord!
     {
         for users in list {
             if (users.get_username() == username)
@@ -95,7 +95,7 @@ class userDictionary: ObservableObject
     //Course and Task Data work
     
     
-    func add_course(username: String,  _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date)
+    func add_course(_ username: String,  _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date)
     {
         
         for users in list {
@@ -108,7 +108,7 @@ class userDictionary: ObservableObject
         //self.courseData.add_course(className, roomName, days, startTime, endTime)
     }
     
-    func get_course(username: String, _ givenCourseName: String) -> courseRecord
+    func get_course(_ username: String, _ givenCourseName: String) -> courseRecord
     {
         
         for users in list {
@@ -121,7 +121,7 @@ class userDictionary: ObservableObject
         return list[0].get_course(givenCourseName)
     }
     
-    func edit_course(username:String, _ courseName:String, _ newClassName:String, _ newRoomName:String, _ newDays:[Int], _ newStartTime:Date, _ newEndTime:Date)
+    func edit_course(_ username:String, _ courseName:String, _ newClassName:String, _ newRoomName:String, _ newDays:[Int], _ newStartTime:Date, _ newEndTime:Date)
     {
         
         for users in list {
@@ -134,7 +134,7 @@ class userDictionary: ObservableObject
         return list[0].edit_course(courseName, newClassName, newRoomName, newDays, newStartTime, newEndTime)
     }
     
-    func delete_course(username:String, _ givenCourseName:String)
+    func delete_course(_ username:String, _ givenCourseName:String)
     {
         for users in list {
             if (users.get_username() == username)
@@ -147,7 +147,7 @@ class userDictionary: ObservableObject
     }
     
     
-    func add_task( username: String, _ givenTaskName:String, _ givenClassName:String, _ givenDueDate: Date)
+    func add_task(_ username: String, _ givenTaskName:String, _ givenClassName:String, _ givenDueDate: Date)
     {
         for users in list {
             if (users.get_username() == username)
@@ -159,7 +159,7 @@ class userDictionary: ObservableObject
         return list[0].add_task(givenTaskName, givenClassName, givenDueDate);
     }
 
-    func get_task(username: String, _ givenTaskName:String, _ givenCourseName:String) -> taskRecord
+    func get_task(_ username: String, _ givenTaskName:String, _ givenCourseName:String) -> taskRecord
     {
         for users in list {
             if (users.get_username() == username)
@@ -170,7 +170,7 @@ class userDictionary: ObservableObject
         return list[0].get_task(givenTaskName, givenCourseName)
     }
 
-    func update_task_class(username: String, _ oldClassName:String, _ newClassName:String)
+    func update_task_class(_ username: String, _ oldClassName:String, _ newClassName:String)
     {
         for users in list {
             if (users.get_username() == username)
@@ -180,7 +180,7 @@ class userDictionary: ObservableObject
         }
     }
 
-    func edit_task(username: String, _ givenTaskName:String, _ newTaskName:String, _ newDueDate:Date)
+    func edit_task(_ username: String, _ givenTaskName:String, _ newTaskName:String, _ newDueDate:Date)
     {
         for users in list {
             if (users.get_username() == username)
@@ -189,7 +189,7 @@ class userDictionary: ObservableObject
             }
         }
     }
-    func delete_task(username: String, _ givenTaskName: String, _ givenCourseName: String)
+    func delete_task(_ username: String, _ givenTaskName: String, _ givenCourseName: String)
     {
         for users in list {
             if (users.get_username() == username)
@@ -199,7 +199,7 @@ class userDictionary: ObservableObject
         }
     }
 
-    func delete_course_tasks(username: String, _ givenCourseName: String)
+    func delete_course_tasks(_ username: String, _ givenCourseName: String)
     {
         for users in list {
             if (users.get_username() == username)
