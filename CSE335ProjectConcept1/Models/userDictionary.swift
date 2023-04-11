@@ -156,7 +156,6 @@ class userDictionary: ObservableObject
             }
         }
         
-        return list[0].add_task(givenTaskName, givenClassName, givenDueDate);
     }
 
     func get_task(_ username: String, _ givenTaskName:String, _ givenCourseName:String) -> taskRecord

@@ -17,7 +17,7 @@ struct HomeView: View {
         VStack {
             HStack {
                 NavigationLink(
-                    destination: LoginView(),
+                    destination: LoginView(userData: userData),
                     label: {
                         Text("\(currUsername)")
                     }).buttonStyle(.borderedProminent)
