@@ -58,10 +58,10 @@ struct taskDetails: View {
                      */
                     
                     NavigationLink(
-                        /*
-                        destination: editTask(courseData: courseData, taskData: taskData, prevTaskName: taskName, newTaskName: taskName, courseName: courseName, newDueDate: taskData.get_task(taskName, courseName).get_due_date()),*/
                         
-                        destination: HomeView(currUsername: currUsername, userData: userData),
+                        destination: editTask(userData: userData, currUsername:currUsername, prevTaskName: taskName, newTaskName: taskName, courseName: courseName, newDueDate: userData.get_task(currUsername, taskName, courseName).get_due_date()),
+                        
+                       // destination: HomeView(currUsername: currUsername, userData: userData),
                         label: {
                             Text("Edit Task")
                         }).buttonStyle(.borderedProminent)

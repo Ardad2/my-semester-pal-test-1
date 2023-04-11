@@ -33,8 +33,7 @@ struct editTask: View {
             VStack(){
                 HStack {
                     NavigationLink(
-                        /*destination: homeScreen(courseData: courseData, taskData: taskData
-                                               ),*/
+
                         
                         destination: HomeView(currUsername: currUsername, userData: userData),
                         label: {

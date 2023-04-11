@@ -89,9 +89,8 @@ struct courseDetails: View {
                     
                     HStack(){
                         NavigationLink(
-                            /*destination: editCourse(courseData: courseData, taskData: taskData, prevCourseName: courseName, newCourseName: courseName, newRoomName: courseData.get_course(courseName).get_room_name(), newStartTime: courseData.get_course(courseName).get_start_time(), newEndTime: courseData.get_course(courseName).get_end_time(), days: courseData.get_course(courseName).get_days() ),*/
+                            destination: editCourse(userData: userData, currUsername: currUsername, prevCourseName: courseName, newCourseName: courseName, newRoomName: userData.get_course(currUsername, courseName).get_room_name(), newStartTime: userData.get_course(currUsername, courseName).get_start_time(), newEndTime: userData.get_course(currUsername, courseName).get_end_time(), days: userData.get_course(currUsername, courseName).get_days() ),
                             
-                            destination: HomeView(currUsername: currUsername, userData: userData),
 
                             
                             label: {
@@ -114,8 +113,7 @@ struct courseDetails: View {
                     
                     //
                     NavigationLink(
-                        /*destination: newTask(courseData: courseData, taskData: taskData, courseName: self.courseName),*/
-                        destination: HomeView(currUsername: currUsername, userData: userData),
+                        destination: newTask(userData: userData, currUsername: currUsername, courseName: self.courseName),
 
                         label: {
                             Text("Add New Task")
@@ -133,8 +131,8 @@ struct courseDetails: View {
                                 Group{
                                     if (datum.get_class_name() == courseName) {
                                         NavigationLink(
-                                           /* destination: taskDetails(courseName: courseName, taskName:datum.get_task_name(), courseData: courseData, taskData: taskData)*/
-                                            destination: HomeView(currUsername: currUsername, userData: userData)
+                                            destination: taskDetails(userData: userData, currUsername: currUsername, courseName: courseName, taskName:datum.get_task_name())
+                                            //destination: HomeView(currUsername: currUsername, userData: userData)
 
                                         
                                         ){
