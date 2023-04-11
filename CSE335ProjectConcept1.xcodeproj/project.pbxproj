@@ -74,6 +74,7 @@
 		82331C6D29E4EBB200E4EE53 /* newCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newCourse.swift; sourceTree = "<group>"; };
 		82331C6F29E4EBB900E4EE53 /* newTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTask.swift; sourceTree = "<group>"; };
 		82331C7129E4EBC400E4EE53 /* taskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskDetails.swift; sourceTree = "<group>"; };
+		824828EA29E60AEB000C9D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 		82331C0E29E0E1DD00E4EE53 /* CSE335ProjectConcept1 */ = {
 			isa = PBXGroup;
 			children = (
+				824828EA29E60AEB000C9D68 /* Info.plist */,
 				82331C6629E4E92D00E4EE53 /* editViews */,
 				82331C6329E47FEB00E4EE53 /* detailViews */,
 				82331C6229E47FCD00E4EE53 /* newViews */,
@@ -519,6 +521,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CSE335ProjectConcept1/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CSE335ProjectConcept1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -547,6 +550,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CSE335ProjectConcept1/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CSE335ProjectConcept1/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
