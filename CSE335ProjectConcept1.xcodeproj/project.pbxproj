@@ -26,6 +26,9 @@
 		82331C6829E4E94200E4EE53 /* editTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C6729E4E94200E4EE53 /* editTask.swift */; };
 		82331C6A29E4E94800E4EE53 /* editCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C6929E4E94800E4EE53 /* editCourse.swift */; };
 		82331C6C29E4E98F00E4EE53 /* courseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C6B29E4E98F00E4EE53 /* courseDetails.swift */; };
+		82331C6E29E4EBB200E4EE53 /* newCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C6D29E4EBB200E4EE53 /* newCourse.swift */; };
+		82331C7029E4EBB900E4EE53 /* newTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C6F29E4EBB900E4EE53 /* newTask.swift */; };
+		82331C7229E4EBC400E4EE53 /* taskDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C7129E4EBC400E4EE53 /* taskDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		82331C6729E4E94200E4EE53 /* editTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editTask.swift; sourceTree = "<group>"; };
 		82331C6929E4E94800E4EE53 /* editCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editCourse.swift; sourceTree = "<group>"; };
 		82331C6B29E4E98F00E4EE53 /* courseDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseDetails.swift; sourceTree = "<group>"; };
+		82331C6D29E4EBB200E4EE53 /* newCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newCourse.swift; sourceTree = "<group>"; };
+		82331C6F29E4EBB900E4EE53 /* newTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTask.swift; sourceTree = "<group>"; };
+		82331C7129E4EBC400E4EE53 /* taskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,8 @@
 		82331C6229E47FCD00E4EE53 /* newViews */ = {
 			isa = PBXGroup;
 			children = (
+				82331C6D29E4EBB200E4EE53 /* newCourse.swift */,
+				82331C6F29E4EBB900E4EE53 /* newTask.swift */,
 			);
 			path = newViews;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				82331C6B29E4E98F00E4EE53 /* courseDetails.swift */,
+				82331C7129E4EBC400E4EE53 /* taskDetails.swift */,
 			);
 			path = detailViews;
 			sourceTree = "<group>";
@@ -338,9 +347,12 @@
 				82331C4129E0E62100E4EE53 /* courseRecord.swift in Sources */,
 				82331C6C29E4E98F00E4EE53 /* courseDetails.swift in Sources */,
 				82331C4329E0E63100E4EE53 /* courseDictionary.swift in Sources */,
+				82331C7029E4EBB900E4EE53 /* newTask.swift in Sources */,
+				82331C6E29E4EBB200E4EE53 /* newCourse.swift in Sources */,
 				82331C4729E0E64400E4EE53 /* taskDictionary.swift in Sources */,
 				82331C6129E47C4100E4EE53 /* MyCoursesView.swift in Sources */,
 				82331C3A29E0E30200E4EE53 /* HomeView.swift in Sources */,
+				82331C7229E4EBC400E4EE53 /* taskDetails.swift in Sources */,
 				82331C3D29E0E5F800E4EE53 /* userRecord.swift in Sources */,
 				82331C4529E0E63A00E4EE53 /* taskRecord.swift in Sources */,
 				82331C1229E0E1DD00E4EE53 /* LoginView.swift in Sources */,

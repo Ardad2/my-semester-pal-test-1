@@ -36,7 +36,7 @@ struct courseDetails: View {
                         /*destination: myCourses(courseData: courseData, taskData: taskData
                                               ),*/
                         
-                        destination: HomeView(currUsername: currUsername, userData: userData),
+                        destination: MyCoursesView(userData: userData, currUsername: currUsername),
 
                         label: {
                             Text("Back")
