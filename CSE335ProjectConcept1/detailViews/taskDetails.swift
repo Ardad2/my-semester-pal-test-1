@@ -15,6 +15,7 @@ struct taskDetails: View {
     @State var currUsername: String
 
 
+
     var courseName:String
     var taskName:String
     
@@ -25,7 +26,8 @@ struct taskDetails: View {
                     NavigationLink(
                         /*destination: homeScreen(courseData: courseData, taskData: taskData
                                                ),*/
-                        destination: HomeView(currUsername: currUsername, userData: userData),
+                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon: -111.9400, lat: 33.4255 ),
+
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)

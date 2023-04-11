@@ -23,6 +23,7 @@ struct newTask: View {
     @State var newTime:Date = Calendar.current.date(byAdding: .hour, value: +1, to: Date())!
     @State var message:String = ""
 
+
     
     
     
@@ -34,7 +35,9 @@ struct newTask: View {
                     NavigationLink(
                         /*destination: homeScreen(courseData: courseData, taskData: taskData
                                                ),*/
-                        destination: HomeView(currUsername: currUsername, userData: userData),
+                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon: -111.9400, lat: 33.4255 ),
+
+
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)

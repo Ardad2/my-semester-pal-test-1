@@ -11,6 +11,7 @@ import MapKit
 import SwiftUI
 import CoreData
 
+
 struct earthquakeData : Decodable
 {
     let earthquakes:[earthquake]
@@ -40,6 +41,7 @@ struct Location: Identifiable {
     var name: String
     var coordinate: CLLocationCoordinate2D
 }
+
 
 struct HomeView: View {
     
@@ -112,7 +114,19 @@ struct HomeView: View {
                     }
                     
                     Text("Welcome back \(userData.get_first_name(username: currUsername)) !")
+                    
                     List {
+                        ForEach(displayEarthquakes) {
+                            datum in VStack(){
+                                HStack {
+                                    Text(datum.datetime)
+                                    Text(datum.magnitude)
+                                }
+                            }
+                        }
+                    }
+                    
+                    /*List {
                         Section(header: ListHeader())
                         {
                             ForEach(userData.get_user(currUsername).taskData.list)
@@ -129,7 +143,9 @@ struct HomeView: View {
                             }
                             }
                         }
-                    }
+                    }*/
+                    
+                    
                 }
             }
             

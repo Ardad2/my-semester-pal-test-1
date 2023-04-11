@@ -32,6 +32,7 @@ struct editCourse: View {
     @State var days:[Int];
     @State var message:String = ""
 
+
     
     @State private var isOn = false
     @State private var onMonday = false;
@@ -48,8 +49,8 @@ struct editCourse: View {
             VStack(){
                 HStack {
                     NavigationLink(
-                        //destination: HomeView(currUsername: currUsername, userData: userData),
-                        destination: LoginView(userData: userData),
+                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255),
+
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)

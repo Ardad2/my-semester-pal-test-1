@@ -13,13 +13,15 @@ struct MyCoursesView: View {
     
     @ObservedObject var userData:userDictionary = userDictionary();
     @State var currUsername: String
+
     
     var body: some View {
         NavigationView {
             VStack {
                 HStack {
                     NavigationLink(
-                        destination: HomeView(currUsername: currUsername, userData: userData),
+                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon: -111.9400, lat: 33.4255 ),
+
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)

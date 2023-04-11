@@ -34,6 +34,7 @@ struct newCourse: View {
     @State private var onFriday = false;
     @State private var onSaturday = false;
     @State private var onSunday = false;
+
     
 
     
@@ -42,7 +43,8 @@ struct newCourse: View {
             VStack(){
                 HStack {
                     NavigationLink(
-                        destination: HomeView(currUsername: currUsername, userData: userData),
+                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon: -111.9400, lat: 33.4255 ),
+
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)

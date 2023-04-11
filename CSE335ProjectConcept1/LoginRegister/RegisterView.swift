@@ -17,6 +17,7 @@ struct RegisterView: View {
     @State private var enteredFirstName: String = ""
     @State private var enteredLastName: String = ""
     @State private var registerStatus: String = ""
+
     
     @State private var showPassword: Bool = false
     
@@ -141,7 +142,8 @@ struct RegisterView: View {
     @ViewBuilder
     func checkUsername() -> some View {
         switch (userData.check_login(username: enteredUsername, password: enteredPassword)) {
-        case true: HomeView()
+        case true: HomeView(displayEarthquakes: [], address: "Tempe", lon: 32, lat: -100)
+
         default: RegisterView(userData: userData)
         }
     }

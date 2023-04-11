@@ -26,6 +26,7 @@ struct LoginView: View {
     @State private var enteredPassword: String = ""
     @State private var showPassword: Bool = false
     @State var loginStatus: String = ""
+
     
     @StateObject var userData:userDictionary = userDictionary()
     
@@ -150,14 +151,14 @@ struct LoginView: View {
     @ViewBuilder
     func checkUsername() -> some View {
         switch (userData.check_login(username: enteredUsername, password: enteredPassword)) {
-        case true: HomeView(currUsername: enteredUsername, userData: userData)
+        case true: HomeView(currUsername: enteredUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon: 24.13, lat: 21.3)
         default: LoginView(loginStatus:"Invalid log-in details.", userData: userData)
         }
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+/*struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(, displayEarthquakes: [displayEarthquake])
     }
-}
+}*/

@@ -11,6 +11,8 @@ import SwiftUI
 
 
 
+
+
 struct editTask: View {
     
     @ObservedObject var userData:userDictionary = userDictionary();
@@ -25,6 +27,7 @@ struct editTask: View {
     @State var newDueDate:Date;
     @State var message:String = ""
 
+
     
     
     
@@ -35,8 +38,7 @@ struct editTask: View {
                     NavigationLink(
 
                         
-                        //destination: HomeView(currUsername: currUsername, userData: userData),
-                        destination: LoginView(userData: userData),
+                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat:33.4255),
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)
