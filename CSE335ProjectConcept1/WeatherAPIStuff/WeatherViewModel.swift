@@ -18,7 +18,7 @@ struct WeatherViewModel {
     }
     
     var temperature: Double {
-        return weather.temperature
+        return (1.8 * (weather.temperature - 273) + 32)
     }
     
     var city: String {

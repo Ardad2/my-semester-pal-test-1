@@ -120,15 +120,7 @@ struct HomeView: View {
             VStack {
                 VStack {
                     
-                    Button{
-                        displayEarthquakes.removeAll()
-                        getJsonData(longitude: lon, latitude: lat)
-                    }label: {
-                        Text("Get Weather")
-                    }
-                    
                     Text("Welcome back \(userData.get_first_name(username: currUsername)) !")
-                    Text("\(temp)")
                     
                     List {
                         ForEach(weatherList, id: \.id) { weather in
@@ -137,7 +129,7 @@ struct HomeView: View {
                         }
                     .listStyle(PlainListStyle())
                     
-                    /*List {
+                    List {
                         Section(header: ListHeader())
                         {
                             ForEach(userData.get_user(currUsername).taskData.list)
@@ -154,11 +146,13 @@ struct HomeView: View {
                             }
                             }
                         }
-                    }*/
+                    }.listStyle(PlainListStyle())
                     
                     
                 }
             }
+            
+        }.onAppear{getWeather()
             
         }
         
@@ -168,93 +162,12 @@ struct HomeView: View {
         
     }
     
-    func getJsonData(longitude: Double, latitude: Double) {
+    func getWeather() {
         
         var addWeatherVM = AddWeatherViewModel()
         addWeatherVM.save { weather in addWeather(weather)
             
         }
-        
-        
-        
-        var long = (Double(round(100 * longitude) / 100))
-        if (long < 0)
-        {
-            long = long * (-1.0)
-        }
-        
-        var lati = (Double(round(100 * latitude) / 100))
-        
-        if (lati < 0)
-        {
-            lati = lati * (-1.0)
-        }
-        
-        
-        var north = lati + 10.0
-        var south = lati - 10.0
-        var east = long - 10.0
-        var west = long + 10.0
-        
-        north = Double(round(100 * north) / 100)
-        south = Double(round(100 * south) / 100)
-        east = Double(round(100 * east) / 100)
-        west = Double(round(100 * west) / 100)
-        
-        
-        
-        //let urlAsString = "http://api.geonames.org/earthquakesJSON?north=" + String(north) + "&south=" + String(south) + "&east=" + String(east) + "&west=" + String(west) + "&username=arjdad"
-            // print(urlAsString)
-        
-        let urlAsString = "https://api.openweathermap.org/data/2.5/weather?lat=33.427204&lon=-111.939896&appid=75c9465b7903aa974a54a9be46f2e87d&units=imperial"
-        
-        
-        let url = URL(string: urlAsString)!
-        let urlSession = URLSession.shared
-
-        let jsonQuery = urlSession.dataTask(with: url, completionHandler: { data, response, error -> Void in
-            if (error != nil) {
-                print(error!.localizedDescription)
-            }
-            var err: NSError?
-            
-            var count = 0;
-            
-            do {
-                //let decodedData = try JSONDecoder().decode(Welcome.self, from: data!)
-                
-                //for earth in decodedData.main {
-                  //  let currDatetime = earth.datetime
-                    //let currMagnitude = earth.magnitude
-                    //displayEarthquakes.append(displayEarthquake(datetime: currDatetime, magnitude: String(currMagnitude)))
-
-                //}
-                
-                //temp = decodedData.main.tempMax;
-                
-                //print(decodedData.main.temp)
-                
-
-                
-                //let currDatetime = decodedData.earthquakes[count].datetime;
-                //let currMagnitude = String(decodedData.earthquakes[count].magnitude)
-                
-
-                
-                
-                //displayEarthquakes = decodedData.earthquakes;
-                
-                //print(decodedData.earthquakes[0].src)
-                
-               // location = decodedData.earthQuakeData[0].placeName
-                //longitute = String(decodedData.postalcodes[0].lng)
-                //latitude = String(decodedData.postalcodes[0].lat)
-                
-            } catch {
-                print("error: \(error)")
-            }
-        })
-        jsonQuery.resume()
     }
     
     func getTemperature() {
@@ -291,7 +204,7 @@ struct HomeView: View {
                 URLImage(url: Constants.Urls.weatherUrlAsStringByIcon(icon: weather.icon))
                     .frame(width: 50, height: 50)
                 
-                Text("\(Int(weather.temperature)) K")
+                Text("\(Int(weather.temperature)) F")
             }
             .padding()
             .background(Color(#colorLiteral(red: 0.9133135676, green: 0.9335765243, blue: 0.98070997, alpha: 1)))
