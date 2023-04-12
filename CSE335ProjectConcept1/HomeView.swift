@@ -11,6 +11,30 @@ import MapKit
 import SwiftUI
 import CoreData
 
+struct Weather: Decodable {
+    var name: String
+    var main: Main
+    
+    struct Main: Decodable {
+        var temp: Double
+        var feelsLike: Double
+        var tempMin: Double
+        var tempMax: Double
+        var pressure: Double
+        var humidity: Double
+        
+        enum CodingKeys: String, CodingKey {
+            case feelsLike = "feels_like"
+            case tempMin = "temp_min"
+            case tempMax = "temp_max"
+            case temp
+            case pressure
+            case humidity
+        }
+    }
+}
+
+
 
 struct earthquakeData : Decodable
 {
@@ -71,7 +95,7 @@ struct HomeView: View {
     @State var address:String
     @State var lon:Double
     @State var lat:Double
-
+    
     
 
     var body: some View {
@@ -185,8 +209,11 @@ struct HomeView: View {
         
         
         
-        let urlAsString = "http://api.geonames.org/earthquakesJSON?north=" + String(north) + "&south=" + String(south) + "&east=" + String(east) + "&west=" + String(west) + "&username=arjdad"
-        print(urlAsString)
+        /*let urlAsString = "http://api.geonames.org/earthquakesJSON?north=" + String(north) + "&south=" + String(south) + "&east=" + String(east) + "&west=" + String(west) + "&username=arjdad"
+        print(urlAsString)*/
+        
+        let urlAsString = "https://api.openweathermap.org/data/2.5/weather?lat=33.427204&lon=-111.939896&appid=75c9465b7903aa974a54a9be46f2e87d&units=imperial"
+        
         
         let url = URL(string: urlAsString)!
         let urlSession = URLSession.shared
