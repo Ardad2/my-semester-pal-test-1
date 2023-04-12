@@ -11,72 +11,6 @@ import MapKit
 import SwiftUI
 import CoreData
 
-
-// MARK: - Welcome
-/*struct Welcome: Codable {
-    let coord: Coord
-    let weather: [Weather]
-    let base: String
-    let main: Main
-    let visibility: Int
-    let wind: Wind
-    let clouds: Clouds
-    let dt: Int
-    let sys: Sys
-    let timezone, id: Int
-    let name: String
-    let cod: Int
-}
-
-// MARK: - Clouds
-struct Clouds: Codable {
-    let all: Int
-}
-
-// MARK: - Coord
-struct Coord: Codable {
-    let lon, lat: Double
-}
-
-// MARK: - Main
-struct Main: Codable {
-    let temp: Double
-    let feelsLike: Int
-    let tempMin, tempMax: Double
-    let pressure, humidity: Int
-
-    enum CodingKeys: String, CodingKey {
-        case temp
-        case feelsLike = "feels_like"
-        case tempMin = "temp_min"
-        case tempMax = "temp_max"
-        case pressure, humidity
-    }
-}
-
-// MARK: - Sys
-struct Sys: Codable {
-    let type, id: Int
-    let country: String
-    let sunrise, sunset: Int
-}
-
-// MARK: - Weather
-struct Weather: Codable {
-    let id: Int
-    let main, description, icon: String
-}
-
-// MARK: - Wind
-struct Wind: Codable {
-    let speed: Double
-    let deg: Int
-    let gust: Double
-}
-
-*/
-
-
 struct earthquakeData : Decodable
 {
     let earthquakes:[earthquake]
@@ -109,6 +43,14 @@ struct Location: Identifiable {
 
 
 struct HomeView: View {
+    
+    @State var weatherList: [WeatherViewModel] = [WeatherViewModel]()
+    
+    func addWeather(_ weather: WeatherViewModel) {
+        weatherList.append(weather)
+    }
+
+
     
     @State var currUsername: String = ""
     @StateObject var userData:userDictionary = userDictionary()
@@ -182,22 +124,18 @@ struct HomeView: View {
                         displayEarthquakes.removeAll()
                         getJsonData(longitude: lon, latitude: lat)
                     }label: {
-                        Text("Get earthquake info")
+                        Text("Get Weather")
                     }
                     
                     Text("Welcome back \(userData.get_first_name(username: currUsername)) !")
                     Text("\(temp)")
                     
                     List {
-                        ForEach(displayEarthquakes) {
-                            datum in VStack(){
-                                HStack {
-                                    Text(datum.datetime)
-                                    Text(datum.magnitude)
-                                }
-                            }
+                        ForEach(weatherList, id: \.id) { weather in
+                            WeatherCell(weather: weather)
                         }
-                    }
+                        }
+                    .listStyle(PlainListStyle())
                     
                     /*List {
                         Section(header: ListHeader())
@@ -231,6 +169,12 @@ struct HomeView: View {
     }
     
     func getJsonData(longitude: Double, latitude: Double) {
+        
+        var addWeatherVM = AddWeatherViewModel()
+        addWeatherVM.save { weather in addWeather(weather)
+            
+        }
+        
         
         
         var long = (Double(round(100 * longitude) / 100))
@@ -324,6 +268,40 @@ struct HomeView: View {
             }
         }
     }
+    
+    struct WeatherCell: View {
+        
+        let weather: WeatherViewModel
+        
+        var body: some View {
+            HStack {
+                VStack(alignment: .leading, spacing: 15) {
+                    Text(weather.city)
+                        .fontWeight(.bold)
+                    HStack {
+                        Image(systemName: "sunrise")
+                        Text("\(weather.sunrise.formatAsString())")
+                    }
+                    HStack {
+                        Image(systemName: "sunset")
+                        Text("\(weather.sunset.formatAsString())")
+                    }
+                }
+                Spacer()
+                URLImage(url: Constants.Urls.weatherUrlAsStringByIcon(icon: weather.icon))
+                    .frame(width: 50, height: 50)
+                
+                Text("\(Int(weather.temperature)) K")
+            }
+            .padding()
+            .background(Color(#colorLiteral(red: 0.9133135676, green: 0.9335765243, blue: 0.98070997, alpha: 1)))
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
 
-}
+        }
+    }
+    
+
+        
+    }
+
 
