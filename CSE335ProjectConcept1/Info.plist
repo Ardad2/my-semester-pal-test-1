@@ -8,8 +8,6 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>http://api.openweathermap.org/</key>
-			<dict/>
 			<key>NSIncludesSubdomains</key>
 			<true/>
 			<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
@@ -17,6 +15,8 @@
 			<key>NSTemporaryExceptionMinimumTLSVersion</key>
 			<string>TLSv1.1</string>
 			<key>http://api.geonames.org/</key>
+			<dict/>
+			<key>http://api.openweathermap.org/</key>
 			<dict/>
 		</dict>
 	</dict>

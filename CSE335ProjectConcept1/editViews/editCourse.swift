@@ -49,7 +49,7 @@ struct editCourse: View {
             VStack(){
                 HStack {
                     NavigationLink(
-                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255),
+                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
 
                         label: {
                             Text("Home")

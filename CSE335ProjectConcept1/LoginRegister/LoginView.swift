@@ -151,7 +151,7 @@ struct LoginView: View {
     @ViewBuilder
     func checkUsername() -> some View {
         switch (userData.check_login(username: enteredUsername, password: enteredPassword)) {
-        case true: HomeView(currUsername: enteredUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon: 24.13, lat: 21.3)
+        case true: HomeView(currUsername: enteredUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0");
         default: LoginView(loginStatus:"Invalid log-in details.", userData: userData)
         }
     }

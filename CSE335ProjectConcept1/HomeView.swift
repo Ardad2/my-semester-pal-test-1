@@ -13,7 +13,7 @@ import CoreData
 
 
 // MARK: - Welcome
-struct Welcome: Codable {
+/*struct Welcome: Codable {
     let coord: Coord
     let weather: [Weather]
     let base: String
@@ -74,6 +74,8 @@ struct Wind: Codable {
     let gust: Double
 }
 
+*/
+
 
 struct earthquakeData : Decodable
 {
@@ -111,7 +113,13 @@ struct HomeView: View {
     @State var currUsername: String = ""
     @StateObject var userData:userDictionary = userDictionary()
     
+
+
+
+    
     @State var displayEarthquakes:[displayEarthquake]
+    
+    
 
     private static let defaultLocation = CLLocationCoordinate2D(
         latitude: 33.4255,
@@ -135,6 +143,7 @@ struct HomeView: View {
     @State var lon:Double
     @State var lat:Double
     
+    @State var temp:String
     
 
     var body: some View {
@@ -177,6 +186,7 @@ struct HomeView: View {
                     }
                     
                     Text("Welcome back \(userData.get_first_name(username: currUsername)) !")
+                    Text("\(temp)")
                     
                     List {
                         ForEach(displayEarthquakes) {
@@ -222,6 +232,9 @@ struct HomeView: View {
     
     func getJsonData(longitude: Double, latitude: Double) {
         
+        var weatherVM = WeatherViewModel()
+        temp = weatherVM.temperature
+        
         var long = (Double(round(100 * longitude) / 100))
         if (long < 0)
         {
@@ -266,19 +279,23 @@ struct HomeView: View {
             var count = 0;
             
             do {
-                let decodedData = try JSONDecoder().decode(earthquakeData.self, from: data!)
+                //let decodedData = try JSONDecoder().decode(Welcome.self, from: data!)
                 
-                for earth in decodedData.earthquakes {
-                    let currDatetime = earth.datetime
-                    let currMagnitude = earth.magnitude
-                    displayEarthquakes.append(displayEarthquake(datetime: currDatetime, magnitude: String(currMagnitude)))
+                //for earth in decodedData.main {
+                  //  let currDatetime = earth.datetime
+                    //let currMagnitude = earth.magnitude
+                    //displayEarthquakes.append(displayEarthquake(datetime: currDatetime, magnitude: String(currMagnitude)))
 
-                }
+                //}
+                
+                //temp = decodedData.main.tempMax;
+                
+                //print(decodedData.main.temp)
                 
 
                 
-                let currDatetime = decodedData.earthquakes[count].datetime;
-                let currMagnitude = String(decodedData.earthquakes[count].magnitude)
+                //let currDatetime = decodedData.earthquakes[count].datetime;
+                //let currMagnitude = String(decodedData.earthquakes[count].magnitude)
                 
 
                 

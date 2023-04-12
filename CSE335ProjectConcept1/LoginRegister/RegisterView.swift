@@ -142,7 +142,7 @@ struct RegisterView: View {
     @ViewBuilder
     func checkUsername() -> some View {
         switch (userData.check_login(username: enteredUsername, password: enteredPassword)) {
-        case true: HomeView(displayEarthquakes: [], address: "Tempe", lon: 32, lat: -100)
+        case true: HomeView(displayEarthquakes: [], address: "Tempe", lon: 32, lat: -100, temp: "0")
 
         default: RegisterView(userData: userData)
         }

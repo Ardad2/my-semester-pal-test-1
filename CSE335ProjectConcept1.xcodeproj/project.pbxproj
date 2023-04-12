@@ -29,6 +29,10 @@
 		82331C6E29E4EBB200E4EE53 /* newCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C6D29E4EBB200E4EE53 /* newCourse.swift */; };
 		82331C7029E4EBB900E4EE53 /* newTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C6F29E4EBB900E4EE53 /* newTask.swift */; };
 		82331C7229E4EBC400E4EE53 /* taskDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82331C7129E4EBC400E4EE53 /* taskDetails.swift */; };
+		82E947F229E673000087A268 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E947F129E673000087A268 /* Weather.swift */; };
+		82E947F829E711230087A268 /* AddWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E947F729E711230087A268 /* AddWeatherViewModel.swift */; };
+		82E947FA29E711320087A268 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E947F929E711320087A268 /* WeatherViewModel.swift */; };
+		82E947FD29E712760087A268 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E947FC29E712760087A268 /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		82331C6F29E4EBB900E4EE53 /* newTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTask.swift; sourceTree = "<group>"; };
 		82331C7129E4EBC400E4EE53 /* taskDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taskDetails.swift; sourceTree = "<group>"; };
 		824828EA29E60AEB000C9D68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		82E947F129E673000087A268 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		82E947F729E711230087A268 /* AddWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherViewModel.swift; sourceTree = "<group>"; };
+		82E947F929E711320087A268 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		82E947FC29E712760087A268 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,7 @@
 		82331C0E29E0E1DD00E4EE53 /* CSE335ProjectConcept1 */ = {
 			isa = PBXGroup;
 			children = (
+				82E947FB29E7119F0087A268 /* WeatherAPIStuff */,
 				824828EA29E60AEB000C9D68 /* Info.plist */,
 				82331C6629E4E92D00E4EE53 /* editViews */,
 				82331C6329E47FEB00E4EE53 /* detailViews */,
@@ -212,6 +221,17 @@
 				82331C6929E4E94800E4EE53 /* editCourse.swift */,
 			);
 			path = editViews;
+			sourceTree = "<group>";
+		};
+		82E947FB29E7119F0087A268 /* WeatherAPIStuff */ = {
+			isa = PBXGroup;
+			children = (
+				82E947F129E673000087A268 /* Weather.swift */,
+				82E947F729E711230087A268 /* AddWeatherViewModel.swift */,
+				82E947F929E711320087A268 /* WeatherViewModel.swift */,
+				82E947FC29E712760087A268 /* Store.swift */,
+			);
+			path = WeatherAPIStuff;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,11 +364,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E947FD29E712760087A268 /* Store.swift in Sources */,
 				82331C3F29E0E60D00E4EE53 /* userDictionary.swift in Sources */,
 				82331C4929E25ECD00E4EE53 /* RegisterView.swift in Sources */,
 				82331C4129E0E62100E4EE53 /* courseRecord.swift in Sources */,
 				82331C6C29E4E98F00E4EE53 /* courseDetails.swift in Sources */,
 				82331C4329E0E63100E4EE53 /* courseDictionary.swift in Sources */,
+				82E947FA29E711320087A268 /* WeatherViewModel.swift in Sources */,
+				82E947F829E711230087A268 /* AddWeatherViewModel.swift in Sources */,
 				82331C7029E4EBB900E4EE53 /* newTask.swift in Sources */,
 				82331C6E29E4EBB200E4EE53 /* newCourse.swift in Sources */,
 				82331C4729E0E64400E4EE53 /* taskDictionary.swift in Sources */,
@@ -358,6 +381,7 @@
 				82331C3D29E0E5F800E4EE53 /* userRecord.swift in Sources */,
 				82331C4529E0E63A00E4EE53 /* taskRecord.swift in Sources */,
 				82331C1229E0E1DD00E4EE53 /* LoginView.swift in Sources */,
+				82E947F229E673000087A268 /* Weather.swift in Sources */,
 				82331C6A29E4E94800E4EE53 /* editCourse.swift in Sources */,
 				82331C6829E4E94200E4EE53 /* editTask.swift in Sources */,
 				82331C1029E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift in Sources */,
