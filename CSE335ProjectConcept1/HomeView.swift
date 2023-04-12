@@ -20,12 +20,12 @@ struct earthquakeData : Decodable
 struct earthquake : Decodable
 {
     let datetime:String
-    let depth:Double
-    let lng:Double
+    //let depth:Double
+    //let lng:Double
     let src:String
     let eqid: String
     let magnitude: Double
-    let lat:Double
+    //let lat:Double
 }
 
 struct displayEarthquake : Identifiable
@@ -228,6 +228,10 @@ struct HomeView: View {
             }
         })
         jsonQuery.resume()
+    }
+    
+    func getTemperature() {
+        
     }
     
     struct ListHeader: View {
