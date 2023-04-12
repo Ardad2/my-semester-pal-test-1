@@ -33,6 +33,9 @@
 		82E947F829E711230087A268 /* AddWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E947F729E711230087A268 /* AddWeatherViewModel.swift */; };
 		82E947FA29E711320087A268 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E947F929E711320087A268 /* WeatherViewModel.swift */; };
 		82E947FD29E712760087A268 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E947FC29E712760087A268 /* Store.swift */; };
+		82E947FF29E712EC0087A268 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E947FE29E712EC0087A268 /* Constants.swift */; };
+		82E9480129E713000087A268 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9480029E713000087A268 /* Webservice.swift */; };
+		82E9480329E713480087A268 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9480229E713480087A268 /* SettingsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,9 @@
 		82E947F729E711230087A268 /* AddWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherViewModel.swift; sourceTree = "<group>"; };
 		82E947F929E711320087A268 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		82E947FC29E712760087A268 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		82E947FE29E712EC0087A268 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		82E9480029E713000087A268 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		82E9480229E713480087A268 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +236,9 @@
 				82E947F729E711230087A268 /* AddWeatherViewModel.swift */,
 				82E947F929E711320087A268 /* WeatherViewModel.swift */,
 				82E947FC29E712760087A268 /* Store.swift */,
+				82E947FE29E712EC0087A268 /* Constants.swift */,
+				82E9480029E713000087A268 /* Webservice.swift */,
+				82E9480229E713480087A268 /* SettingsScreen.swift */,
 			);
 			path = WeatherAPIStuff;
 			sourceTree = "<group>";
@@ -365,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82E947FD29E712760087A268 /* Store.swift in Sources */,
+				82E947FF29E712EC0087A268 /* Constants.swift in Sources */,
 				82331C3F29E0E60D00E4EE53 /* userDictionary.swift in Sources */,
 				82331C4929E25ECD00E4EE53 /* RegisterView.swift in Sources */,
 				82331C4129E0E62100E4EE53 /* courseRecord.swift in Sources */,
@@ -376,8 +386,10 @@
 				82331C6E29E4EBB200E4EE53 /* newCourse.swift in Sources */,
 				82331C4729E0E64400E4EE53 /* taskDictionary.swift in Sources */,
 				82331C6129E47C4100E4EE53 /* MyCoursesView.swift in Sources */,
+				82E9480129E713000087A268 /* Webservice.swift in Sources */,
 				82331C3A29E0E30200E4EE53 /* HomeView.swift in Sources */,
 				82331C7229E4EBC400E4EE53 /* taskDetails.swift in Sources */,
+				82E9480329E713480087A268 /* SettingsScreen.swift in Sources */,
 				82331C3D29E0E5F800E4EE53 /* userRecord.swift in Sources */,
 				82331C4529E0E63A00E4EE53 /* taskRecord.swift in Sources */,
 				82331C1229E0E1DD00E4EE53 /* LoginView.swift in Sources */,

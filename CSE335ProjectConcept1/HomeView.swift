@@ -232,8 +232,6 @@ struct HomeView: View {
     
     func getJsonData(longitude: Double, latitude: Double) {
         
-        var weatherVM = WeatherViewModel()
-        temp = weatherVM.temperature
         
         var long = (Double(round(100 * longitude) / 100))
         if (long < 0)
