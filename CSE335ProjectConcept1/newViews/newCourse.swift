@@ -7,11 +7,11 @@
 
 import Foundation
 
+import MapKit
 import SwiftUI
 
 
 struct newCourse: View {
-    
     
     @ObservedObject var userData:userDictionary = userDictionary();
     @State var currUsername: String
@@ -25,6 +25,8 @@ struct newCourse: View {
     @State var endTime:Date = Calendar.current.date(byAdding: .hour, value: +1, to: Date())!
     @State var days = [0,0,0,0,0,0,0]
     @State var message:String = ""
+    @State var longitude: Double = 0.0
+    @State var latitude: Double = 0.0
     
     @State private var isOn = false
     @State private var onMonday = false;
@@ -44,7 +46,7 @@ struct newCourse: View {
                 HStack {
                     NavigationLink(
                         destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
-
+                        
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)
@@ -52,8 +54,8 @@ struct newCourse: View {
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
                     NavigationLink(
-                       /* destination: myCourses(courseData: courseData, taskData: taskData
-                                              ),*/
+                        /* destination: myCourses(courseData: courseData, taskData: taskData
+                         ),*/
                         destination: MyCoursesView(userData: userData, currUsername: currUsername),
                         label: {
                             Text("Go Back to Courses")

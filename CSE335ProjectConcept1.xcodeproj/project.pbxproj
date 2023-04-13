@@ -38,6 +38,7 @@
 		82E9480529E717720087A268 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9480429E717720087A268 /* URLImage.swift */; };
 		82E9480729E717830087A268 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9480629E717830087A268 /* ImageLoader.swift */; };
 		82E9480929E717BD0087A268 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9480829E717BD0087A268 /* Date+extensions.swift */; };
+		82E9480B29E7AC610087A268 /* newMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9480A29E7AC610087A268 /* newMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		82E9480429E717720087A268 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		82E9480629E717830087A268 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		82E9480829E717BD0087A268 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
+		82E9480A29E7AC610087A268 /* newMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			children = (
 				82331C6D29E4EBB200E4EE53 /* newCourse.swift */,
 				82331C6F29E4EBB900E4EE53 /* newTask.swift */,
+				82E9480A29E7AC610087A268 /* newMap.swift */,
 			);
 			path = newViews;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				82331C3F29E0E60D00E4EE53 /* userDictionary.swift in Sources */,
 				82331C4929E25ECD00E4EE53 /* RegisterView.swift in Sources */,
 				82331C4129E0E62100E4EE53 /* courseRecord.swift in Sources */,
+				82E9480B29E7AC610087A268 /* newMap.swift in Sources */,
 				82331C6C29E4E98F00E4EE53 /* courseDetails.swift in Sources */,
 				82331C4329E0E63100E4EE53 /* courseDictionary.swift in Sources */,
 				82E947FA29E711320087A268 /* WeatherViewModel.swift in Sources */,
