@@ -95,13 +95,13 @@ class userDictionary: ObservableObject
     //Course and Task Data work
     
     
-    func add_course(_ username: String,  _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date)
+    func add_course(_ username: String,  _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date, _ newLongitude: Double, _ newLatitude: Double)
     {
         
         for users in list {
             if (users.get_username() == username)
             {
-                users.add_course(className, roomName, days, startTime, endTime)
+                users.add_course(className, roomName, days, startTime, endTime, newLongitude, newLatitude)
             }
         }
         
@@ -121,13 +121,13 @@ class userDictionary: ObservableObject
         return list[0].get_course(givenCourseName)
     }
     
-    func edit_course(_ username:String, _ courseName:String, _ newClassName:String, _ newRoomName:String, _ newDays:[Int], _ newStartTime:Date, _ newEndTime:Date)
+    func edit_course(_ username:String, _ courseName:String, _ newClassName:String, _ newRoomName:String, _ newDays:[Int], _ newStartTime:Date, _ newEndTime:Date, _ newLongitude: Double, _ newLatitude: Double)
     {
         
         for users in list {
             if (users.get_username() == username)
             {
-                users.edit_course(courseName, newClassName, newRoomName, newDays, newStartTime, newEndTime)
+                users.edit_course(courseName, newClassName, newRoomName, newDays, newStartTime, newEndTime, newLongitude, newLatitude)
             }
         }
         

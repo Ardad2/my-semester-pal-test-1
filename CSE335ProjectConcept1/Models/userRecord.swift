@@ -73,9 +73,9 @@ class userRecord: Identifiable
     
     //Functions for the Course Data
     
-    func add_course( _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date)
+    func add_course( _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date, _ newLongitude: Double, _ newLatitude: Double)
     {
-        self.courseData.add_course(className, roomName, days, startTime, endTime)
+        self.courseData.add_course(className, roomName, days, startTime, endTime, newLongitude, newLatitude)
     }
     
     func get_course(_ givenCourseName: String) -> courseRecord
@@ -83,9 +83,9 @@ class userRecord: Identifiable
         return self.courseData.get_course(givenCourseName)
     }
     
-    func edit_course( _ courseName:String, _ newClassName:String, _ newRoomName:String, _ newDays:[Int], _ newStartTime:Date, _ newEndTime:Date)
+    func edit_course( _ courseName:String, _ newClassName:String, _ newRoomName:String, _ newDays:[Int], _ newStartTime:Date, _ newEndTime:Date, _ newLongitude: Double, _ newLatitude: Double)
     {
-        self.courseData.edit_course(courseName, newClassName, newRoomName, newDays, newStartTime, newEndTime)
+        self.courseData.edit_course(courseName, newClassName, newRoomName, newDays, newStartTime, newEndTime, newLongitude, newLatitude)
     }
     
     func delete_course(_ givenCourseName:String)

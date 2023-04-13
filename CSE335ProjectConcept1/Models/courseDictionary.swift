@@ -28,9 +28,9 @@ class courseDictionary: ObservableObject
     
     //ADD A COURSE
     
-    func add_course( _ givenClassName:String, _ givenRoomName:String, _ givenDays:[Int], _ givenStartTime:Date, _ givenEndTime: Date)
+    func add_course( _ givenClassName:String, _ givenRoomName:String, _ givenDays:[Int], _ givenStartTime:Date, _ givenEndTime: Date, _ givenLongitude: Double, _ givenLatitude : Double)
     {
-        list.append(courseRecord(className:givenClassName, roomName:givenRoomName, days:givenDays, startTime:givenStartTime, endTime:givenEndTime));
+        list.append(courseRecord(className:givenClassName, roomName:givenRoomName, days:givenDays, startTime:givenStartTime, endTime:givenEndTime, longitude: givenLongitude, latitude: givenLatitude));
         
         list = list.sorted(by: {$0.startTime! < $1.startTime!})
     }
@@ -44,12 +44,12 @@ class courseDictionary: ObservableObject
                 return courses;
             }
         }
-        return courseRecord(className: "F", roomName: "F", days: [0,0,0,0,0,0,0], startTime: Calendar.current.date(byAdding: .hour, value: +1, to: Date())!, endTime: Calendar.current.date(byAdding: .hour, value: +2, to: Date())!);
+        return courseRecord(className: "F", roomName: "F", days: [0,0,0,0,0,0,0], startTime: Calendar.current.date(byAdding: .hour, value: +1, to: Date())!, endTime: Calendar.current.date(byAdding: .hour, value: +2, to: Date())!, longitude: 0.0, latitude: 0.0);
     }
     
-    func edit_course( _ courseName:String, _ newClassName:String, _ newRoomName:String, _ newDays:[Int], _ newStartTime:Date, _ newEndTime:Date)
+    func edit_course( _ courseName:String, _ newClassName:String, _ newRoomName:String, _ newDays:[Int], _ newStartTime:Date, _ newEndTime:Date, _ newLongitude: Double, _ newLatitude: Double)
     {
-        get_course(courseName).change_record(newClassName: newClassName, newRoomName: newRoomName, newDays: newDays, newStartTime: newStartTime, newEndTime: newEndTime)
+        get_course(courseName).change_record(newClassName: newClassName, newRoomName: newRoomName, newDays: newDays, newStartTime: newStartTime, newEndTime: newEndTime, newLongitude: newLongitude, newLatitude: newLatitude)
     }
     
     func delete_course(_ givenCourseName:String)

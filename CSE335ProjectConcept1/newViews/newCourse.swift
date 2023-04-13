@@ -150,7 +150,7 @@ struct newCourse: View {
                             days[6] = 1;
                         }
                         
-                        userData.add_course(currUsername, newCourseName, newRoomName, days, startTime, endTime)
+                        userData.add_course(currUsername, newCourseName, newRoomName, days, startTime, endTime, 0.0, 0.0)
                         message = "Succesfully added Course \(newCourseName)"
                     }) {
                         Text("Submit")

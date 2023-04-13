@@ -31,15 +31,15 @@ class courseRecord: Identifiable
     
     //Change
     
-    func change_record(newClassName:String, newRoomName:String, newDays:[Int], newStartTime:Date, newEndTime:Date, longitude: Double, latitude: Double)
+    func change_record(newClassName:String, newRoomName:String, newDays:[Int], newStartTime:Date, newEndTime:Date, newLongitude: Double, newLatitude: Double)
     {
         self.className = newClassName;
         self.roomName = newRoomName;
         self.days = newDays;
         self.startTime = newStartTime;
         self.endTime = newEndTime;
-        self.longitude = longitude
-        self.latitude = latitude
+        self.longitude = newLongitude
+        self.latitude = newLatitude
     }
     
     //Get class Name
