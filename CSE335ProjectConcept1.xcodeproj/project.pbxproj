@@ -41,6 +41,8 @@
 		82E9480B29E7AC610087A268 /* newMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9480A29E7AC610087A268 /* newMap.swift */; };
 		82E9480F29E8C6790087A268 /* tableData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82E9480D29E8C6790087A268 /* tableData.xcdatamodeld */; };
 		82E9481129E8C6920087A268 /* coreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9481029E8C6920087A268 /* coreDataController.swift */; };
+		82E9481329E8C8B30087A268 /* userDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9481229E8C8B20087A268 /* userDetails.swift */; };
+		82E9481529E8C8BA0087A268 /* editUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E9481429E8C8BA0087A268 /* editUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		82E9480A29E7AC610087A268 /* newMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newMap.swift; sourceTree = "<group>"; };
 		82E9480E29E8C6790087A268 /* tableData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = tableData.xcdatamodel; sourceTree = "<group>"; };
 		82E9481029E8C6920087A268 /* coreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataController.swift; sourceTree = "<group>"; };
+		82E9481229E8C8B20087A268 /* userDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDetails.swift; sourceTree = "<group>"; };
+		82E9481429E8C8BA0087A268 /* editUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +232,7 @@
 			children = (
 				82331C6B29E4E98F00E4EE53 /* courseDetails.swift */,
 				82331C7129E4EBC400E4EE53 /* taskDetails.swift */,
+				82E9481229E8C8B20087A268 /* userDetails.swift */,
 			);
 			path = detailViews;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			children = (
 				82331C6729E4E94200E4EE53 /* editTask.swift */,
 				82331C6929E4E94800E4EE53 /* editCourse.swift */,
+				82E9481429E8C8BA0087A268 /* editUser.swift */,
 			);
 			path = editViews;
 			sourceTree = "<group>";
@@ -419,12 +425,14 @@
 				82331C3D29E0E5F800E4EE53 /* userRecord.swift in Sources */,
 				82331C4529E0E63A00E4EE53 /* taskRecord.swift in Sources */,
 				82331C1229E0E1DD00E4EE53 /* LoginView.swift in Sources */,
+				82E9481329E8C8B30087A268 /* userDetails.swift in Sources */,
 				82E9480929E717BD0087A268 /* Date+extensions.swift in Sources */,
 				82E947F229E673000087A268 /* Weather.swift in Sources */,
 				82331C6A29E4E94800E4EE53 /* editCourse.swift in Sources */,
 				82331C6829E4E94200E4EE53 /* editTask.swift in Sources */,
 				82E9480529E717720087A268 /* URLImage.swift in Sources */,
 				82331C1029E0E1DD00E4EE53 /* CSE335ProjectConcept1App.swift in Sources */,
+				82E9481529E8C8BA0087A268 /* editUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

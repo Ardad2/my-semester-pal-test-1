@@ -108,9 +108,9 @@ struct HomeView: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 NavigationLink(
-                    destination: LoginView(),
+                    destination: LoginView(loginStatus:"Successfully logged out", userData: userData),
                     label: {
-                        Text("Settings")
+                        Text("Log Out")
                     }).buttonStyle(.borderedProminent)
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
