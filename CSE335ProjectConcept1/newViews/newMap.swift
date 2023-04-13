@@ -19,7 +19,7 @@ struct Location1: Identifiable, Codable, Equatable {
 }
 
 struct newMap: View {
-    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 50, longitude: 0), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
+    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 111.9281, longitude: 33.4242), span: MKCoordinateSpan(latitudeDelta: 25, longitudeDelta: 25))
     @State private var locations = [Location1]()
     var body: some View {
         ZStack {
