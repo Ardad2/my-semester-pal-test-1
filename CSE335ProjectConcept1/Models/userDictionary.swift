@@ -97,7 +97,7 @@ class userDictionary: ObservableObject
         var answer = ""
         
         for users in list {
-            if (users.get_email() == username)
+            if (users.get_username() == username)
             {
                 answer = users.get_email();
             }
