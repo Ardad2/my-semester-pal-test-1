@@ -80,6 +80,31 @@ class userDictionary: ObservableObject
         return answer
     }
     
+    func get_last_name(username: String) -> String
+    {
+        var answer = ""
+        
+        for users in list {
+            if (users.get_username() == username)
+            {
+                answer = users.get_last_name();
+            }
+        }
+        return answer
+    }
+    
+    func get_email(username: String) -> String {
+        var answer = ""
+        
+        for users in list {
+            if (users.get_email() == username)
+            {
+                answer = users.get_email();
+            }
+        }
+        return answer
+    }
+    
     func get_user(_ username: String) -> userRecord!
     {
         for users in list {
