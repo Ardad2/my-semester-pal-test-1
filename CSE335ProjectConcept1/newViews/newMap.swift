@@ -42,6 +42,8 @@ struct newMap: View {
                         //create a new location
                         
                         let newLocation = Location1(id: UUID(), name: "New location", description: "", latitude: mapRegion.center.latitude, longitude: mapRegion.center.longitude)
+                        
+                        locations.removeAll()
                         locations.append(newLocation)
                     } label : {
                         Image(systemName: "plus")
