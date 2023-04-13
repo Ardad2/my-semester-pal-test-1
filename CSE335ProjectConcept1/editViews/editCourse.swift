@@ -86,6 +86,21 @@ struct editCourse: View {
                         TextField("Enter the course name", text: $newRoomName)
                     }
                     HStack() {
+                        Text("Longitude/Latitude: ")
+                       Text("\(longitude),\(latitude)")
+                    }
+                    
+                    NavigationLink(
+                        destination: newMap(userData: userData, currUsername: currUsername, prevCourseName: prevCourseName, newCourseName: newCourseName, newRoomName: newRoomName, startTime: newStartTime, endTime: newEndTime, newStartTime: newStartTime, newEndTime: newEndTime, days: days, message: message, prevLongitude: longitude, prevLatitude: latitude, isNew: false),
+                        
+                        label: {
+                            Text("Change Location")
+                        }).buttonStyle(.borderedProminent)
+                        .navigationTitle("Home")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarHidden(true)
+                    
+                    HStack() {
                         Text("Timings")
                         HStack() {
                             DatePicker("Start Time", selection: $newStartTime, displayedComponents: .hourAndMinute);
