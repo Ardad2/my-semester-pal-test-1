@@ -31,6 +31,8 @@ struct editCourse: View {
     @State var newEndTime:Date;
     @State var days:[Int];
     @State var message:String = ""
+    @State var longitude: Double = 0.0
+    @State var latitude: Double = 0.0
 
 
     
