@@ -34,7 +34,7 @@ struct MyCoursesView: View {
                 VStack {
                     Text("My Courses")
                     NavigationLink(
-                        destination: newCourse(userData: userData, currUsername: currUsername),
+                        destination: newMap(),
                         label: {
                             Text("Add a New Course")
                         }).buttonStyle(.borderedProminent)
