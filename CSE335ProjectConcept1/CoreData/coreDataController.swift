@@ -9,9 +9,9 @@ import Foundation
 import CoreData
 class coreDataController : ObservableObject
 {
-    @Published var LanData:[Language] = [Language]()
-    @Published var OSData:[OS] = [OS]()
-    @Published var MoData:[Mobile] = [Mobile]()
+    @Published var userCoreData:[User] = [User]()
+    @Published var courseCoreData:[Course] = [Course]()
+    @Published var taskCoreData:[Tasks] = [Tasks]()
     
     // Handler to persistent object container
     let persistentContainer:NSPersistentContainer
@@ -38,6 +38,42 @@ class coreDataController : ObservableObject
         //OSData = getOS()
         //MoData = getMobile()
         
+    }
+    
+    func getUsers() -> [User]
+    {
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let x = try persistentContainer.viewContext.fetch(fetchRequest)
+            return x
+        }
+        catch {
+            return []
+        }
+    }
+    
+    func getCourses() -> [Course]
+    {
+        let fetchRequest: NSFetchRequest<Course> = Course.fetchRequest()
+        do {
+            let x = try persistentContainer.viewContext.fetch(fetchRequest)
+            return x
+        }
+        catch {
+            return []
+        }
+    }
+    
+    func getTasks() -> [User]
+    {
+        let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
+        do {
+            let x = try persistentContainer.viewContext.fetch(fetchRequest)
+            return x
+        }
+        catch {
+            return []
+        }
     }
 
     
