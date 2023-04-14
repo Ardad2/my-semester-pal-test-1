@@ -81,13 +81,24 @@ struct editUser: View {
                             .cornerRadius(20)
                             .padding()
                     
-                    NavigationLink(destination:HomeView(currUsername: currUsername, userData: userData)){
+                    NavigationLink(
+                       /* destination: homeScreen(courseData: courseData, taskData: taskData
+                                               ),*/
+                        
+                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
 
                         
-                        Text("Go Back")
+                        label: {
+                            Text("Home")
+                        }).buttonStyle(.borderedProminent)
+                        .navigationTitle("Go Back")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarHidden(true)
+                        
+  /*                      Text("Go Back")
                             .foregroundColor(.black)
                     }                    .frame(height: 50)
-                        .frame(maxWidth: .infinity)
+                        .frame(maxWidth: .infinity)*/
 
                         
                         /*
