@@ -231,6 +231,21 @@ class userDictionary: ObservableObject
         }
     }
     
+    //
+    
+    func change_profile_details(_ username: String, _ newPassword: String, _ newEmail: String, _ newFirstName:String, _ newLastName:String)
+    {
+        for users in list {
+            if (users.get_username() == username)
+            {
+                users.change_email(newEmail: newEmail)
+                users.change_password(newPassword: newPassword)
+                users.change_name(newFirstName: newFirstName, newLastName: newLastName)
+            }
+        }
+        
+    }
+    
     
     
  
