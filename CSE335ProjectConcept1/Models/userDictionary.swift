@@ -16,6 +16,11 @@ class userDictionary: ObservableObject
         
     }
     
+    func reset_data()
+    {
+        list.removeAll()
+    }
+    
     //Creates the new user account.
     
     func create_new_user(username: String, password: String, email:String, firstName: String, lastName: String )
