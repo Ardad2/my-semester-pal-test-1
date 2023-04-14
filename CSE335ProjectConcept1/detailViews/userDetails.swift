@@ -40,9 +40,19 @@ struct userDetails: View {
                         Text("Email: ")
                         Text("\(userData.get_email(username: currUsername))")
                     }
-                    HStack {
-                        Text("Edit Profile")
-                    }
+
+                    
+                    NavigationLink(
+                        
+                        destination: editUser(userData: userData, currUsername: currUsername, newFirstName: userData.get_first_name(username: currUsername), newLastName: userData.get_last_name(username: currUsername), newEmail: userData.get_email(username: currUsername), newPassword: ""),
+                        
+                       // destination: HomeView(currUsername: currUsername, userData: userData),
+                        label: {
+                            Text("Edit Profile")
+                        }).buttonStyle(.borderedProminent)
+                        .navigationTitle("Home")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarHidden(true)
                     
                 }
             }
