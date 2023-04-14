@@ -34,9 +34,10 @@ class coreDataController : ObservableObject
             
         }
         
-        //LanData = getLanguages()
-        //OSData = getOS()
-        //MoData = getMobile()
+        userCoreData = getUsers()
+        courseCoreData = getCourses()
+        taskCoreData = getTasks()
+
         
     }
     
@@ -64,7 +65,7 @@ class coreDataController : ObservableObject
         }
     }
     
-    func getTasks() -> [User]
+    func getTasks() -> [Tasks]
     {
         let fetchRequest: NSFetchRequest<Tasks> = Tasks.fetchRequest()
         do {
@@ -75,6 +76,8 @@ class coreDataController : ObservableObject
             return []
         }
     }
+    
+    
 
     
 }

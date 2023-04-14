@@ -144,8 +144,8 @@ struct LoginView: View {
                 
                 Spacer()
 
-        }.navigationBarHidden(true) 
-        }
+        }.navigationBarHidden(true)
+        }.onAppear {print("Hello World")}
     }
     
     @ViewBuilder
