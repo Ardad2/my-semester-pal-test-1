@@ -103,7 +103,21 @@ class coreDataController : ObservableObject
     
     func add_task(username: String, givenTaskName: String, givenClassName: String, givenDueDate: Date)
     {
-        let newTask = Task(context: persistentContainer.viewContext)
+        let newTask = Tasks(context: persistentContainer.viewContext)
+        
+        newTask.id = UUID()
+        newTask.username = username
+        newTask.taskName = givenTaskName
+        newTask.courseName = givenClassName
+        newTask.dueDate = givenDueDate
+        
+        do {
+            try persistentContainer.viewContext.save()
+            taskCoreData = getTasks()
+        }
+        catch {
+            print("failed to save \(error)")
+        }
         
     }
 
