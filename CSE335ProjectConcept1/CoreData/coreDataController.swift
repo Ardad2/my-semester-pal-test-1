@@ -315,12 +315,90 @@ class coreDataController : ObservableObject
     
     func update_task_class(username: String, oldClassName: String, newClassName: String)
     {
-        
+        for tasks in getTasks()
+        {
+            if ( (tasks.username == username) && (tasks.username == oldClassName))
+            {
+                let newTask = Tasks(context: persistentContainer.viewContext)
+                
+                newTask.id = UUID()
+                newTask.username = username
+                newTask.taskName = tasks.taskName
+                newTask.mark = tasks.mark
+                newTask.dueDate = tasks.dueDate
+                newTask.courseName = newClassName
+                
+                //Delete the task
+                
+                persistentContainer.viewContext.delete(tasks)
+                do {
+                    //print("saving")
+                    try persistentContainer.viewContext.save()
+                    //LanData = getLanguages()
+                } catch{
+                    print("failed to save \(error)")
+                }
+                
+                
+                
+                //Add the new task
+                
+                do {
+                    try persistentContainer.viewContext.save()
+                    taskCoreData = getTasks()
+                }
+                catch {
+                    print("failed to save \(error)")
+                }
+                
+                
+                
+            }
+        }
     }
     
-    func edit_task(username:String, givenTaskName: String, newTaskName:String, newDueDate: String)
+    func edit_task(username:String, givenTaskName: String, newTaskName:String, newDueDate: Date)
     {
-        
+        for tasks in getTasks()
+        {
+            if ( (tasks.username == username) && (tasks.taskName == givenTaskName))
+            {
+                let newTask = Tasks(context: persistentContainer.viewContext)
+                
+                newTask.id = UUID()
+                newTask.username = username
+                newTask.taskName = newTaskName
+                newTask.mark = tasks.mark
+                newTask.dueDate = newDueDate
+                newTask.courseName = tasks.courseName
+                
+                //Delete the task
+                
+                persistentContainer.viewContext.delete(tasks)
+                do {
+                    //print("saving")
+                    try persistentContainer.viewContext.save()
+                    //LanData = getLanguages()
+                } catch{
+                    print("failed to save \(error)")
+                }
+                
+                
+                
+                //Add the new task
+                
+                do {
+                    try persistentContainer.viewContext.save()
+                    taskCoreData = getTasks()
+                }
+                catch {
+                    print("failed to save \(error)")
+                }
+                
+                
+                
+            }
+        }
     }
     
     
