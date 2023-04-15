@@ -38,7 +38,7 @@ struct newTask: View {
                     NavigationLink(
                         /*destination: homeScreen(courseData: courseData, taskData: taskData
                                                ),*/
-                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
+                        destination: HomeView(dataController:dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
 
 
                         label: {
@@ -48,7 +48,7 @@ struct newTask: View {
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
                     NavigationLink(
-                        destination: courseDetails(userData: userData, currUsername: currUsername, courseName: courseName
+                        destination: courseDetails(dataController:dataController, userData: userData, currUsername: currUsername, courseName: courseName
                                                   ),
                         label: {
                             Text("Go Back to Course")

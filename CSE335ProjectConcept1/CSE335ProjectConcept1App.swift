@@ -12,7 +12,7 @@ struct CSE335ProjectConcept1App: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            LoginView(dataController: coreDataController())
         }
     }
 }

@@ -29,7 +29,7 @@ struct taskDetails: View {
                     NavigationLink(
                         /*destination: homeScreen(courseData: courseData, taskData: taskData
                                                ),*/
-                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
+                        destination: HomeView(dataController: dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
 
                         label: {
                             Text("Home")
@@ -64,7 +64,7 @@ struct taskDetails: View {
                     
                     NavigationLink(
                         
-                        destination: editTask(userData: userData, currUsername:currUsername, prevTaskName: taskName, newTaskName: taskName, courseName: courseName, newDueDate: userData.get_task(currUsername, taskName, courseName).get_due_date()),
+                        destination: editTask(dataController: dataController, userData: userData, currUsername:currUsername, prevTaskName: taskName, newTaskName: taskName, courseName: courseName, newDueDate: userData.get_task(currUsername, taskName, courseName).get_due_date()),
                         
                        // destination: HomeView(currUsername: currUsername, userData: userData),
                         label: {

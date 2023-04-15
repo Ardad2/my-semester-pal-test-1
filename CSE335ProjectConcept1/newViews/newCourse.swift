@@ -48,7 +48,7 @@ struct newCourse: View {
             VStack(){
                 HStack {
                     NavigationLink(
-                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
+                        destination: HomeView(dataController:dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
                         
                         label: {
                             Text("Home")
@@ -59,7 +59,7 @@ struct newCourse: View {
                     NavigationLink(
                         /* destination: myCourses(courseData: courseData, taskData: taskData
                          ),*/
-                        destination: MyCoursesView(userData: userData, currUsername: currUsername),
+                        destination: MyCoursesView(dataController: dataController, userData: userData, currUsername: currUsername),
                         label: {
                             Text("Go Back to Courses")
                         }).buttonStyle(.borderedProminent)
@@ -88,7 +88,7 @@ struct newCourse: View {
                     }
                     
                     NavigationLink(
-                        destination: newMap(userData: userData, currUsername: currUsername, prevCourseName: "", newCourseName: newCourseName, newRoomName: newRoomName, startTime: startTime, endTime: endTime, newStartTime: startTime, newEndTime: endTime, days: days, message: message, prevLongitude: longitude, prevLatitude: latitude, isNew: true),
+                        destination: newMap(dataController: dataController, userData: userData, currUsername: currUsername, prevCourseName: "", newCourseName: newCourseName, newRoomName: newRoomName, startTime: startTime, endTime: endTime, newStartTime: startTime, newEndTime: endTime, days: days, message: message, prevLongitude: longitude, prevLatitude: latitude, isNew: true),
                         
                         label: {
                             Text("Change Location")

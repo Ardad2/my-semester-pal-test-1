@@ -22,7 +22,7 @@ struct MyCoursesView: View {
             VStack {
                 HStack {
                     NavigationLink(
-                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
+                        destination: HomeView(dataController: dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
 
                         label: {
                             Text("Home")
@@ -36,7 +36,7 @@ struct MyCoursesView: View {
                 VStack {
                     Text("My Courses")
                     NavigationLink(
-                        destination: newCourse(userData: userData, currUsername: currUsername),
+                        destination: newCourse(dataController: dataController, userData: userData, currUsername: currUsername),
                         label: {
                             Text("Add a New Course")
                         }).buttonStyle(.borderedProminent)
@@ -50,7 +50,7 @@ struct MyCoursesView: View {
                             {
                                 ForEach(userData.get_user(currUsername).courseData.list)
                                 {
-                                    datum in NavigationLink(destination: courseDetails(userData:userData, currUsername: currUsername, courseName: datum.get_class_name()))
+                                    datum in NavigationLink(destination: courseDetails(dataController: dataController, userData:userData, currUsername: currUsername, courseName: datum.get_class_name()))
                                     {
                                         HStack {
                                             Text(datum.get_class_name());

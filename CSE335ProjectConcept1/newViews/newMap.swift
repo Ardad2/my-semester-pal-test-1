@@ -102,8 +102,8 @@ struct newMap: View {
     @ViewBuilder
     func returnView() -> some View {
         switch (isNew) {
-        case true: newCourse(userData: userData, currUsername: currUsername, newCourseName: newCourseName, newRoomName: newRoomName, startTime: startTime, endTime: endTime, days: days, longitude: longitude, latitude: latitude);
-        default: editCourse(userData: userData, currUsername: currUsername, prevCourseName: prevCourseName, newCourseName: newCourseName, newRoomName: newRoomName, newStartTime: newStartTime, newEndTime: newEndTime, days: days, longitude: longitude, latitude: latitude);
+        case true: newCourse(dataController: dataController, userData: userData, currUsername: currUsername, newCourseName: newCourseName, newRoomName: newRoomName, startTime: startTime, endTime: endTime, days: days, longitude: longitude, latitude: latitude);
+        default: editCourse(dataController: dataController, userData: userData, currUsername: currUsername, prevCourseName: prevCourseName, newCourseName: newCourseName, newRoomName: newRoomName, newStartTime: newStartTime, newEndTime: newEndTime, days: days, longitude: longitude, latitude: latitude);
         }
     }
 }

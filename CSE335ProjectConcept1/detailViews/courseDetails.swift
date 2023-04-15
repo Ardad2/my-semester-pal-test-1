@@ -31,7 +31,7 @@ struct courseDetails: View {
                        /* destination: homeScreen(courseData: courseData, taskData: taskData
                                                ),*/
                         
-                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
+                        destination: HomeView(dataController: dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
 
                         
                         label: {
@@ -44,7 +44,7 @@ struct courseDetails: View {
                         /*destination: myCourses(courseData: courseData, taskData: taskData
                                               ),*/
                         
-                        destination: MyCoursesView(userData: userData, currUsername: currUsername),
+                        destination: MyCoursesView(dataController: dataController, userData: userData, currUsername: currUsername),
 
                         label: {
                             Text("Back")
@@ -97,7 +97,7 @@ struct courseDetails: View {
                     
                     HStack(){
                         NavigationLink(
-                            destination: editCourse(userData: userData, currUsername: currUsername, prevCourseName: courseName, newCourseName: courseName, newRoomName: userData.get_course(currUsername, courseName).get_room_name(), newStartTime: userData.get_course(currUsername, courseName).get_start_time(), newEndTime: userData.get_course(currUsername, courseName).get_end_time(), days: userData.get_course(currUsername, courseName).get_days() ),
+                            destination: editCourse(dataController: dataController, userData: userData, currUsername: currUsername, prevCourseName: courseName, newCourseName: courseName, newRoomName: userData.get_course(currUsername, courseName).get_room_name(), newStartTime: userData.get_course(currUsername, courseName).get_start_time(), newEndTime: userData.get_course(currUsername, courseName).get_end_time(), days: userData.get_course(currUsername, courseName).get_days() ),
                             
 
                             
@@ -121,7 +121,7 @@ struct courseDetails: View {
                     
                     //
                     NavigationLink(
-                        destination: newTask(userData: userData, currUsername: currUsername, courseName: self.courseName),
+                        destination: newTask(dataController: dataController, userData: userData, currUsername: currUsername, courseName: self.courseName),
 
                         label: {
                             Text("Add New Task")
@@ -139,7 +139,7 @@ struct courseDetails: View {
                                 Group{
                                     if (datum.get_class_name() == courseName) {
                                         NavigationLink(
-                                            destination: taskDetails(userData: userData, currUsername: currUsername, courseName: courseName, taskName:datum.get_task_name())
+                                            destination: taskDetails(dataController: dataController, userData: userData, currUsername: currUsername, courseName: courseName, taskName:datum.get_task_name())
                                             //destination: HomeView(currUsername: currUsername, userData: userData)
 
                                         

@@ -41,7 +41,7 @@ struct editTask: View {
                     NavigationLink(
 
                         
-                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
+                        destination: HomeView(dataController: dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
                         label: {
                             Text("Home")
                         }).buttonStyle(.borderedProminent)
@@ -49,7 +49,7 @@ struct editTask: View {
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
                     NavigationLink(
-                        destination: courseDetails(userData: userData, currUsername: currUsername, courseName: self.courseName
+                        destination: courseDetails(dataController: dataController, userData: userData, currUsername: currUsername, courseName: self.courseName
                                                   ),
                         label: {
                             Text("Go Back to Course")

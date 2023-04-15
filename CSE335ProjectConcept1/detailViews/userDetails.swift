@@ -23,7 +23,7 @@ struct userDetails: View {
                        /* destination: homeScreen(courseData: courseData, taskData: taskData
                                                ),*/
                         
-                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
+                        destination: HomeView(dataController: dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
 
                         
                         label: {
@@ -46,7 +46,7 @@ struct userDetails: View {
                     
                     NavigationLink(
                         
-                        destination: editUser(userData: userData, currUsername: currUsername, newFirstName: userData.get_first_name(username: currUsername), newLastName: userData.get_last_name(username: currUsername), newEmail: userData.get_email(username: currUsername), newPassword: ""),
+                        destination: editUser(dataController: dataController, userData: userData, currUsername: currUsername, newFirstName: userData.get_first_name(username: currUsername), newLastName: userData.get_last_name(username: currUsername), newEmail: userData.get_email(username: currUsername), newPassword: ""),
                         
                        // destination: HomeView(currUsername: currUsername, userData: userData),
                         label: {

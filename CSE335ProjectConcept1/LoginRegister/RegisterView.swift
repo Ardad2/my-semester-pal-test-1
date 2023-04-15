@@ -105,7 +105,7 @@ struct RegisterView: View {
                         .cornerRadius(20)
                         .padding()
                 
-                NavigationLink(destination:LoginView(userData:userData)){
+                NavigationLink(destination:LoginView(userData:userData, dataController: dataController)){
 
                     
                     Text("Already have an account? Sign in")

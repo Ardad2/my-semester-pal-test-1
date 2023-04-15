@@ -94,7 +94,7 @@ struct HomeView: View {
         VStack {
             HStack {
                 NavigationLink(
-                    destination: userDetails(userData: userData, currUsername: currUsername),
+                    destination: userDetails(dataController:dataController, userData: userData, currUsername: currUsername),
                     label: {
                         Text("\(currUsername)")
                     }).buttonStyle(.borderedProminent)
@@ -102,7 +102,7 @@ struct HomeView: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 NavigationLink(
-                    destination: MyCoursesView(userData:userData, currUsername: currUsername),
+                    destination: MyCoursesView(dataController:dataController, userData:userData, currUsername: currUsername),
                     label: {
                         Text("My Courses")
                     }).buttonStyle(.borderedProminent)
@@ -110,7 +110,7 @@ struct HomeView: View {
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
                 NavigationLink(
-                    destination: LoginView(loginStatus:"Successfully logged out", userData: userData),
+                    destination: LoginView(loginStatus:"Successfully logged out", userData: userData, dataController: dataController),
                     label: {
                         Text("Log Out")
                     }).buttonStyle(.borderedProminent)
@@ -136,7 +136,7 @@ struct HomeView: View {
                         {
                             ForEach(userData.get_user(currUsername).taskData.list)
                             {
-                                datum in NavigationLink(destination: taskDetails(userData:userData, currUsername: currUsername, courseName: datum.get_class_name(), taskName: datum.get_task_name())){VStack()
+                                datum in NavigationLink(destination: taskDetails(dataController:dataController, userData:userData, currUsername: currUsername, courseName: datum.get_class_name(), taskName: datum.get_task_name())){VStack()
                                 {
                                     HStack {
                                         Text(datum.get_task_name());

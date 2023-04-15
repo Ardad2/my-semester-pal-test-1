@@ -88,7 +88,7 @@ struct editUser: View {
                        /* destination: homeScreen(courseData: courseData, taskData: taskData
                                                ),*/
                         
-                        destination: HomeView(currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
+                        destination: HomeView(dataController: dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
 
                         
                         label: {
