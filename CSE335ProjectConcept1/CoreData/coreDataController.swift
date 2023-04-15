@@ -196,5 +196,134 @@ class coreDataController : ObservableObject
         }
     }
     
+    func delete_course(username: String, givenCourseName: String)
+    {
+        for courses in getCourses()
+        {
+            if ((courses.username == username) && (courses.courseName == givenCourseName))
+            {
+                persistentContainer.viewContext.delete(courses)
+                do {
+                    //print("saving")
+                    try persistentContainer.viewContext.save()
+                    //LanData = getLanguages()
+                } catch{
+                    print("failed to save \(error)")
+                }
+            }
+        }
+    }
+    
+    func change_profile_details(username :String, newPassword: String, newEmail: String, newFirstName: String, newLastName: String)
+    {
+        for users in getUsers()
+        {
+            if (users.username == username)
+            {
+                
+                //First delete this user
+                
+                persistentContainer.viewContext.delete(users)
+                do {
+                    //print("saving")
+                    try persistentContainer.viewContext.save()
+                    //LanData = getLanguages()
+                } catch{
+                    print("failed to save \(error)")
+                }
+                
+                //add the new user
+                
+                let newUser = User(context: persistentContainer.viewContext)
+                
+                newUser.id = UUID()
+                newUser.username = username
+                newUser.password = newPassword
+                newUser.email = newEmail
+                newUser.firstName = newFirstName
+                newUser.lastName = newLastName
+                
+                do {
+                    try persistentContainer.viewContext.save()
+                    userCoreData = getUsers()
+                }
+                catch {
+                    print("failed to save \(error)")
+                }
+                
+                break;
+                
+            }
+        }
+    }
+    
+    
+    //Edit Course
+    
+    func edit_course(username:String, courseName: String, newClassName:String, newRoomName:String, newDays:[Int], newStartTime:Date, newEndTime: Date, newLongitude:Double, newLatitude:Double)
+    {
+        
+        for courses in getCourses()
+        {
+            if ((courses.username == username) && (courses.courseName == courseName))
+            {
+                //First we delete that course
+                
+                persistentContainer.viewContext.delete(courses)
+                do {
+                    //print("saving")
+                    try persistentContainer.viewContext.save()
+                    //LanData = getLanguages()
+                } catch{
+                    print("failed to save \(error)")
+                }
+                
+                //We now replace it with the new course and add it to the courses list
+                
+                let newCourse = Course(context: persistentContainer.viewContext)
+                
+                newCourse.id = UUID()
+                newCourse.username = username
+                newCourse.startTime = newStartTime
+                newCourse.roomName = newRoomName
+                newCourse.longitude = newLongitude
+                newCourse.longitude = newLatitude
+                newCourse.endTime = newEndTime
+                newCourse.courseName = newClassName
+                newCourse.day0 = Int16(newDays[0])
+                newCourse.day1 = Int16(newDays[1])
+                newCourse.day2 = Int16(newDays[2])
+                newCourse.day3 = Int16(newDays[3])
+                newCourse.day4 = Int16(newDays[4])
+                newCourse.day5 = Int16(newDays[5])
+                newCourse.day6 = Int16(newDays[6])
+                
+                do {
+                    try persistentContainer.viewContext.save()
+                    courseCoreData = getCourses()
+                }
+                catch {
+                    print("failed to save \(error)")
+                }
+                
+                
+                break;
+                
+            }
+        }
+    }
+    
+    func update_task_class(username: String, oldClassName: String, newClassName: String)
+    {
+        
+    }
+    
+    func edit_task(username:String, givenTaskName: String, newTaskName:String, newDueDate: String)
+    {
+        
+    }
+    
+    
+    
 }
     
