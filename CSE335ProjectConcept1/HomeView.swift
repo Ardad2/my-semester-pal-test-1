@@ -51,6 +51,8 @@ struct HomeView: View {
     }
 
 
+    @State var dataController: coreDataController = coreDataController()
+
     
     @State var currUsername: String = ""
     @StateObject var userData:userDictionary = userDictionary()

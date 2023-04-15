@@ -19,6 +19,7 @@ struct Location1: Identifiable, Codable, Equatable {
 }
 
 struct newMap: View {
+    @State var dataController: coreDataController = coreDataController()
     @ObservedObject var userData:userDictionary = userDictionary();
     @State var currUsername: String
 
