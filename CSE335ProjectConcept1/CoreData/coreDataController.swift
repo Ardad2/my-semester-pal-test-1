@@ -151,5 +151,50 @@ class coreDataController : ObservableObject
         
     }
     
+    func delete_task(username: String, givenTaskName: String, givenCourseName: String)
+    {
+        //Try to find the task first
+        
+        for tasks in getTasks()
+        {
+            if ((tasks.username == username) && (tasks.taskName == givenTaskName) && (tasks.courseName == givenCourseName) )
+            {
+                persistentContainer.viewContext.delete(tasks)
+                do {
+                    //print("saving")
+                    try persistentContainer.viewContext.save()
+                    //LanData = getLanguages()
+                } catch{
+                    print("failed to save \(error)")
+                }
+                
+                break
+            }
+        }
+        
+
+        
+
+        
+    }
+    
+    func delete_course_tasks(username: String, givenCourseName: String)
+    {
+        for tasks in getTasks()
+        {
+            if ((tasks.username == username) && (tasks.courseName == givenCourseName))
+            {
+                persistentContainer.viewContext.delete(tasks)
+                do {
+                    //print("saving")
+                    try persistentContainer.viewContext.save()
+                    //LanData = getLanguages()
+                } catch{
+                    print("failed to save \(error)")
+                }
+            }
+        }
+    }
+    
 }
     
