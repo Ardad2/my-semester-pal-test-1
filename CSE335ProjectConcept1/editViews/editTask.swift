@@ -15,6 +15,9 @@ import SwiftUI
 
 struct editTask: View {
     
+    @State var dataController: coreDataController = coreDataController()
+
+    
     @ObservedObject var userData:userDictionary = userDictionary();
     @State var currUsername: String
 

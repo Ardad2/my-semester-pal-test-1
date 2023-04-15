@@ -23,6 +23,9 @@ struct RegisterView: View {
     
     @StateObject var userData:userDictionary = userDictionary()
     
+    @State var dataController: coreDataController = coreDataController()
+
+    
     //    func create_new_user(username: String, password: String, email:String, firstName: String, lastName: String )
 
     

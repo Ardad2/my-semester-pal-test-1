@@ -10,6 +10,8 @@ import Foundation
 import SwiftUI
 
 struct userDetails: View {
+    @State var dataController: coreDataController = coreDataController()
+
     @ObservedObject var userData:userDictionary = userDictionary()
     @State var currUsername: String
     
