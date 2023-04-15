@@ -121,6 +121,35 @@ class coreDataController : ObservableObject
         
     }
 
+    func add_course(username : String, className:String, roomName:String, days:[Int], startTime:Date, endTime: Date, newLongitude: Double, newLatitude: Double)
+    {
+        let newCourse = Course(context: persistentContainer.viewContext)
+        
+        newCourse.id = UUID()
+        newCourse.username = username
+        newCourse.startTime = startTime
+        newCourse.roomName = roomName
+        newCourse.longitude = newLongitude
+        newCourse.longitude = newLatitude
+        newCourse.endTime = endTime
+        newCourse.courseName = className
+        newCourse.day0 = Int16(days[0])
+        newCourse.day1 = Int16(days[1])
+        newCourse.day2 = Int16(days[2])
+        newCourse.day3 = Int16(days[3])
+        newCourse.day4 = Int16(days[4])
+        newCourse.day5 = Int16(days[5])
+        newCourse.day6 = Int16(days[6])
+        
+        do {
+            try persistentContainer.viewContext.save()
+            courseCoreData = getCourses()
+        }
+        catch {
+            print("failed to save \(error)")
+        }
+        
+    }
     
 }
     
