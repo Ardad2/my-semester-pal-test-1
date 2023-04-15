@@ -145,7 +145,7 @@ struct LoginView: View {
                 Spacer()
 
         }.navigationBarHidden(true)
-        }.onAppear {userData.reset_data()}
+        }//.onAppear {userData.reset_data()}
     }
     
     @ViewBuilder

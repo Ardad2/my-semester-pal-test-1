@@ -77,7 +77,35 @@ class coreDataController : ObservableObject
         }
     }
     
+    //Add new user
     
+    func create_new_user(username: String, password: String, email: String, firstName: String, lastName: String)
+    {
+        let newUser = User(context: persistentContainer.viewContext)
+        
+        newUser.id = UUID()
+        newUser.username = username
+        newUser.password = password
+        newUser.email = email
+        newUser.firstName = firstName
+        newUser.lastName = lastName
+        
+        do {
+            try persistentContainer.viewContext.save()
+            userCoreData = getUsers()
+        }
+        catch {
+            print("failed to save \(error)")
+        }
+        
+        
+    }
+    
+    func add_task(username: String, givenTaskName: String, givenClassName: String, givenDueDate: Date)
+    {
+        let newTask = Task(context: persistentContainer.viewContext)
+        
+    }
 
     
 }
