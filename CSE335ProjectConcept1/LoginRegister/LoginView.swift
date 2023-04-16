@@ -175,7 +175,7 @@ struct LoginView: View {
             
             for tasks in dataController.getTasks()
             {
-                
+                userData.add_task(tasks.username!, tasks.taskName!, tasks.courseName!, tasks.dueDate!)
             }
             
         }
