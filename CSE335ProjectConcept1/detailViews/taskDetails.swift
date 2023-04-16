@@ -75,6 +75,7 @@ struct taskDetails: View {
                         .navigationBarHidden(true)
                     Button(action: {
                         userData.delete_task(currUsername, taskName, courseName);
+                        dataController.delete_task(username: currUsername, givenTaskName: taskName, givenCourseName: courseName)
                         
                     }, label:{Text("Delete Task")})
                 }
