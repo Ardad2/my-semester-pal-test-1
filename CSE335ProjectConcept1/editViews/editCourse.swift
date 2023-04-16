@@ -177,8 +177,10 @@ struct editCourse: View {
                             days[6] = 1;
                         }
                         
-                        userData.edit_course(currUsername, prevCourseName, newCourseName, newRoomName, days, newStartTime, newEndTime, 0.0, 0.0)
+                        userData.edit_course(currUsername, prevCourseName, newCourseName, newRoomName, days, newStartTime, newEndTime, longitude, latitude)
+                        dataController.edit_course(username: currUsername, courseName: prevCourseName, newClassName: newCourseName, newRoomName: newRoomName, newDays: days, newStartTime: newStartTime, newEndTime: newEndTime, newLongitude: longitude, newLatitude: latitude)
                         userData.update_task_class(currUsername, prevCourseName, newCourseName)
+                        dataController.update_task_class(username: currUsername, oldClassName: prevCourseName, newClassName: newCourseName)
                         message = "succesfully edited, new course is \(newCourseName)"
                     }) {
                         

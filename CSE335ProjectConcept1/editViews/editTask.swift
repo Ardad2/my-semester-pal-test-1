@@ -83,6 +83,7 @@ struct editTask: View {
                         Button(action: {
                             
                             userData.edit_task(currUsername, prevTaskName, newTaskName, newDueDate)
+                            dataController.edit_task(username: currUsername, givenTaskName: prevTaskName, newTaskName: newTaskName, newDueDate: newDueDate)
                             message="Edited Task"
                         }) {
                             
