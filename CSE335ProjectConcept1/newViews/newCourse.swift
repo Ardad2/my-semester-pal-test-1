@@ -172,7 +172,12 @@ struct newCourse: View {
                             days[6] = 1;
                         }
                         
-                        userData.add_course(currUsername, newCourseName, newRoomName, days, startTime, endTime, 0.0, 0.0)
+                        userData.add_course(currUsername, newCourseName, newRoomName, days, startTime, endTime, longitude, latitude)
+                        
+                        
+                        
+                        dataController.add_course(username: currUsername, className: newCourseName, roomName: newRoomName, days: days, startTime: startTime, endTime: endTime, newLongitude: longitude, newLatitude: latitude)
+                        
                         message = "Succesfully added Course \(newCourseName)"
                     }) {
                         Text("Submit")

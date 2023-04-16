@@ -83,6 +83,7 @@ struct newTask: View {
                         Button(action: {
                             
                             userData.add_task(currUsername, newTaskName, courseName, newDueDate)
+                            dataController.add_task(username: currUsername, givenTaskName: newTaskName, givenClassName: courseName, givenDueDate: newDueDate)
                             message = "Succesfully added task \(newTaskName)"
                         }) {
                             
