@@ -147,7 +147,38 @@ struct LoginView: View {
                 Spacer()
 
         }.navigationBarHidden(true)
-        }//.onAppear {userData.reset_data()}
+        }.onAppear {userData.reset_data()
+            
+            var newDays: [Int]
+            newDays = [0,0,0,0,0,0,0]
+            
+            //Intiialize the users
+            
+            for users in dataController.getUsers()
+            {
+                userData.create_new_user(username: users.username! , password: users.password!, email: users.email!, firstName: users.firstName!, lastName: users.lastName!)
+            }
+            
+            for courses in dataController.getCourses()
+            {
+                newDays[0] = Int(courses.day0)
+                newDays[1] = Int(courses.day1)
+                newDays[2] = Int(courses.day2)
+                newDays[3] = Int(courses.day3)
+                newDays[4] = Int(courses.day4)
+                newDays[5] = Int(courses.day5)
+                newDays[6] = Int(courses.day6)
+                
+                
+                userData.add_course(courses.username!, courses.courseName!, courses.roomName!, newDays, courses.startTime!, courses.endTime!, courses.longitude, courses.latitude)
+            }
+            
+            for tasks in dataController.getTasks()
+            {
+                
+            }
+            
+        }
     }
     
     @ViewBuilder

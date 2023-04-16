@@ -87,6 +87,8 @@ struct RegisterView: View {
                     else
                     {
                         userData.create_new_user(username:enteredUsername, password: enteredPassword, email: enteredEmail, firstName: enteredFirstName, lastName: enteredLastName)
+                        //coreDataController.
+                        
                         registerStatus = "Succesfully created account \(enteredUsername)!"
                     }
                 }
