@@ -110,7 +110,9 @@ struct courseDetails: View {
                         
                         Button(action: {
                             userData.delete_course_tasks(currUsername, courseName);
+                            dataController.delete_course_tasks(username: currUsername, givenCourseName: courseName)
                             userData.delete_course(currUsername, courseName);
+                            dataController.delete_course(username: currUsername, givenCourseName: courseName)
                             
                         }, label:{Text("Delete Course")})
                         
