@@ -127,7 +127,7 @@ class userDictionary: ObservableObject
     
     func add_course(_ username: String,  _ className:String, _ roomName:String, _ days:[Int], _ startTime:Date, _ endTime: Date, _ newLongitude: Double, _ newLatitude: Double)
     {
-        
+
         for users in list {
             if (users.get_username() == username)
             {

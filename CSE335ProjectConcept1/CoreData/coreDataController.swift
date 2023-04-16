@@ -283,7 +283,6 @@ class coreDataController : ObservableObject
                 
                 //We now replace it with the new course and add it to the courses list
                 
-               let newCourse = Course(context: persistentContainer.viewContext)
                 
                 //newCourse.id = UUID()
                 courses.startTime = newStartTime
@@ -321,17 +320,9 @@ class coreDataController : ObservableObject
     {
         for tasks in getTasks()
         {
-            if ( (tasks.username == username) && (tasks.username == oldClassName))
+            if ( (tasks.username == username) && (tasks.courseName == oldClassName))
             {
-                let newTask = Tasks(context: persistentContainer.viewContext)
-                
-                newTask.id = UUID()
-                newTask.username = username
-                newTask.taskName = tasks.taskName
-                newTask.mark = tasks.mark
-                newTask.dueDate = tasks.dueDate
-                newTask.courseName = newClassName
-                
+    
                 /*
                 //Delete the task
                 
@@ -370,14 +361,6 @@ class coreDataController : ObservableObject
         {
             if ( (tasks.username == username) && (tasks.taskName == givenTaskName))
             {
-                let newTask = Tasks(context: persistentContainer.viewContext)
-                
-                newTask.id = UUID()
-                newTask.username = username
-                newTask.taskName = newTaskName
-                newTask.mark = tasks.mark
-                newTask.dueDate = newDueDate
-                newTask.courseName = tasks.courseName
                 
                 //Delete the task
                 /*

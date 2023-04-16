@@ -172,11 +172,13 @@ struct LoginView: View {
                 
                 userData.add_course(courses.username!, courses.courseName!, courses.roomName!, newDays, courses.startTime!, courses.endTime!, courses.longitude, courses.latitude)
             }
+             
             
             for tasks in dataController.getTasks()
             {
                 userData.add_task(tasks.username!, tasks.taskName!, tasks.courseName!, tasks.dueDate!)
             }
+            
             
         }
     }
