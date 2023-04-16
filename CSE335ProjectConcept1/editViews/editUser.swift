@@ -66,6 +66,7 @@ struct editUser: View {
                             {
 
                             userData.change_profile_details(currUsername, newPassword, newEmail, newFirstName, newLastName)
+                        dataController.change_profile_details(username: currUsername, newPassword: newPassword, newEmail: newEmail, newFirstName: newFirstName, newLastName: newLastName)
                         
                         
                     }
