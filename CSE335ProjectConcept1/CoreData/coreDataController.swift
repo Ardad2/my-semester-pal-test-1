@@ -267,6 +267,8 @@ class coreDataController : ObservableObject
         {
             if ((courses.username == username) && (courses.courseName == courseName))
             {
+                
+                /*
                 //First we delete that course
                 
                 persistentContainer.viewContext.delete(courses)
@@ -277,26 +279,28 @@ class coreDataController : ObservableObject
                 } catch{
                     print("failed to save \(error)")
                 }
+                */
                 
                 //We now replace it with the new course and add it to the courses list
                 
-                let newCourse = Course(context: persistentContainer.viewContext)
+               let newCourse = Course(context: persistentContainer.viewContext)
                 
-                newCourse.id = UUID()
-                newCourse.username = username
-                newCourse.startTime = newStartTime
-                newCourse.roomName = newRoomName
-                newCourse.longitude = newLongitude
-                newCourse.longitude = newLatitude
-                newCourse.endTime = newEndTime
-                newCourse.courseName = newClassName
-                newCourse.day0 = Int16(newDays[0])
-                newCourse.day1 = Int16(newDays[1])
-                newCourse.day2 = Int16(newDays[2])
-                newCourse.day3 = Int16(newDays[3])
-                newCourse.day4 = Int16(newDays[4])
-                newCourse.day5 = Int16(newDays[5])
-                newCourse.day6 = Int16(newDays[6])
+                //newCourse.id = UUID()
+                courses.startTime = newStartTime
+                courses.roomName = newRoomName
+                courses.longitude = newLongitude
+                courses.longitude = newLatitude
+                courses.endTime = newEndTime
+                courses.courseName = newClassName
+                courses.day0 = Int16(newDays[0])
+                courses.day1 = Int16(newDays[1])
+                courses.day2 = Int16(newDays[2])
+                courses.day3 = Int16(newDays[3])
+                courses.day4 = Int16(newDays[4])
+                courses.day5 = Int16(newDays[5])
+                courses.day6 = Int16(newDays[6])
+                
+                
                 
                 do {
                     try persistentContainer.viewContext.save()
@@ -328,6 +332,7 @@ class coreDataController : ObservableObject
                 newTask.dueDate = tasks.dueDate
                 newTask.courseName = newClassName
                 
+                /*
                 //Delete the task
                 
                 persistentContainer.viewContext.delete(tasks)
@@ -338,7 +343,9 @@ class coreDataController : ObservableObject
                 } catch{
                     print("failed to save \(error)")
                 }
+                */
                 
+                tasks.courseName = newClassName
                 
                 
                 //Add the new task
@@ -373,7 +380,7 @@ class coreDataController : ObservableObject
                 newTask.courseName = tasks.courseName
                 
                 //Delete the task
-                
+                /*
                 persistentContainer.viewContext.delete(tasks)
                 do {
                     //print("saving")
@@ -382,7 +389,10 @@ class coreDataController : ObservableObject
                 } catch{
                     print("failed to save \(error)")
                 }
+                */
                 
+                tasks.taskName = newTaskName
+                tasks.dueDate = newDueDate
                 
                 
                 //Add the new task
