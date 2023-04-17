@@ -92,32 +92,56 @@ struct HomeView: View {
 
     var body: some View {
         VStack {
+            
             HStack {
                 NavigationLink(
                     destination: userDetails(dataController:dataController, userData: userData, currUsername: currUsername),
                     label: {
                         Text("\(currUsername)")
-                    }).buttonStyle(.borderedProminent)
+                    })
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
+                    .frame(height: 50)
+     .frame(maxWidth: .infinity)
+     .background(
+        LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+     )
+     .cornerRadius(20)
+     .padding()
+                
                 NavigationLink(
                     destination: MyCoursesView(dataController:dataController, userData:userData, currUsername: currUsername),
                     label: {
                         Text("My Courses")
-                    }).buttonStyle(.borderedProminent)
+                    })
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
+                    .frame(height: 50)
+     .frame(maxWidth: .infinity)
+     .background(
+        LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+     )
+     .cornerRadius(20)
+     .padding()
                 NavigationLink(
                     destination: LoginView(loginStatus:"Successfully logged out", userData: userData, dataController: dataController),
                     label: {
                         Text("Log Out")
-                    }).buttonStyle(.borderedProminent)
+                    })
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
+                    .frame(height: 50)
+     .frame(maxWidth: .infinity)
+     .background(
+        LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+     )
+     .cornerRadius(20)
+     .padding()
             }
+            
             
             VStack {
                 VStack {

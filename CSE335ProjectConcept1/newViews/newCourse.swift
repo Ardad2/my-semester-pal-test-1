@@ -45,7 +45,7 @@ struct newCourse: View {
     
     var body: some View {
         NavigationView {
-            VStack(){
+            VStack(alignment: .center, spacing: 15){
                 HStack {
                     NavigationLink(
                         destination: HomeView(dataController:dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
@@ -183,7 +183,13 @@ struct newCourse: View {
                         message = "Succesfully added Course \(newCourseName)"
                     }) {
                         Text("Submit")
-                    }
+                    }.frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                           LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                        )
+                        .cornerRadius(20)
+                        .padding()
                     
                 }
             }
