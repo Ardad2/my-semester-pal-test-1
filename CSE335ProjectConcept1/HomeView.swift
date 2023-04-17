@@ -55,7 +55,7 @@ struct HomeView: View {
 
     
     @State var currUsername: String = ""
-    @StateObject var userData:userDictionary = userDictionary()
+    @ObservedObject var userData:userDictionary = userDictionary()
     
 
 

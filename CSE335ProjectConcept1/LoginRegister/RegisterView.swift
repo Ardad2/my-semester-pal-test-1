@@ -21,7 +21,7 @@ struct RegisterView: View {
     
     @State private var showPassword: Bool = false
     
-    @StateObject var userData:userDictionary = userDictionary()
+    @ObservedObject var userData:userDictionary = userDictionary()
     
     @State var dataController: coreDataController = coreDataController()
 

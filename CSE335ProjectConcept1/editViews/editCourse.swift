@@ -112,7 +112,7 @@ struct editCourse: View {
                         }
                     }
                     VStack(){
-                        HStack() {
+
                             Toggle(isOn: $onMonday)
                             {
                                 Text("M")
@@ -129,8 +129,8 @@ struct editCourse: View {
                             {
                                 Text("Th")
                             }
-                        }
-                        HStack() {
+
+
                             Toggle(isOn: $onFriday)
                             {
                                 Text("F")
@@ -144,7 +144,7 @@ struct editCourse: View {
                                 Text("Su")
                             }
                             
-                        }
+
                     }
                     
                     Button(action: {
