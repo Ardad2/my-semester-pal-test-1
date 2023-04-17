@@ -107,39 +107,36 @@ struct newCourse: View {
                         }
                     }
                     VStack(){
-                        HStack() {
                             Toggle(isOn: $onMonday)
                             {
-                                Text("M")
+                                Text("Monday")
                             }
+                        
                             Toggle(isOn: $onTuesday)
                             {
-                                Text("T")
+                                Text("Tuesday")
                             }
                             Toggle(isOn: $onWednesday)
                             {
-                                Text("W")
+                                Text("Wednesday")
                             }
                             Toggle(isOn: $onThursday)
                             {
-                                Text("Th")
+                                Text("Thursday")
                             }
-                        }
-                        HStack() {
                             Toggle(isOn: $onFriday)
                             {
-                                Text("F")
+                                Text("Friday")
                             }
                             Toggle(isOn: $onSaturday)
                             {
-                                Text("Sa")
+                                Text("Saturday")
                             }
                             Toggle(isOn: $onSunday)
                             {
-                                Text("Su")
+                                Text("Sunday")
                             }
                             
-                        }
                     }
                     
                     Button(action: {
