@@ -99,11 +99,19 @@ struct newCourse: View {
                     
                     
                     HStack() {
-                        Text("Timings")
-                        HStack() {
-                            DatePicker("Start Time", selection: $startTime, displayedComponents: .hourAndMinute);
-                            DatePicker("End Time", selection: $endTime, displayedComponents: .hourAndMinute);
-                            
+                        VStack {
+                            Text("Timings")
+                            HStack() {
+                                VStack{
+                                    Text("Start Time")
+                                    DatePicker("", selection: $startTime, displayedComponents: .hourAndMinute);
+                                }
+                                VStack {
+                                    Text("End Time")
+                                    DatePicker("", selection: $endTime, displayedComponents: .hourAndMinute);
+                                }
+                                
+                            }
                         }
                     }
                     VStack(){
