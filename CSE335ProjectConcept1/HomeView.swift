@@ -97,7 +97,9 @@ struct HomeView: View {
                 NavigationLink(
                     destination: userDetails(dataController:dataController, userData: userData, currUsername: currUsername),
                     label: {
-                        Text("\(currUsername)")
+                        Text("\(currUsername)")         .font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
                     })
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
@@ -114,6 +116,8 @@ struct HomeView: View {
                     destination: MyCoursesView(dataController:dataController, userData:userData, currUsername: currUsername),
                     label: {
                         Text("My Courses")
+                            .bold()
+                            .foregroundColor(.white)
                     })
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
@@ -128,7 +132,9 @@ struct HomeView: View {
                 NavigationLink(
                     destination: LoginView(loginStatus:"Successfully logged out", userData: userData, dataController: dataController),
                     label: {
-                        Text("Log Out")
+                        Text("Log Out")         .font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
                     })
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
@@ -140,7 +146,9 @@ struct HomeView: View {
      )
      .cornerRadius(20)
      .padding()
-            }
+            }            .padding()
+                .background(Color.black)
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
             
             
             VStack {
@@ -233,7 +241,7 @@ struct HomeView: View {
                 Text("\(Int(weather.temperature)) F")
             }
             .padding()
-            .background(Color(#colorLiteral(red: 0.9133135676, green: 0.9335765243, blue: 0.98070997, alpha: 1)))
+            .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
 
         }
