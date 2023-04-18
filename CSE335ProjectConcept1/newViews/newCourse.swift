@@ -92,7 +92,8 @@ struct newCourse: View {
                 
 
                 VStack(){
-                    Text("Creating New Course")
+                    Text("Creating New Course").font(.title2)
+                        .bold()
                     Text("\(message)")
                     
                     HStack() {
