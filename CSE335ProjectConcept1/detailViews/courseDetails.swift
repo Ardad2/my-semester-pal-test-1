@@ -314,12 +314,12 @@ struct courseDetails: View {
             }
 
             region.center = CLLocationCoordinate2D(
-                latitude: 11.4255,
-                longitude: -131.9400
+                latitude: userData.get_course(currUsername, courseName).get_latitude(),
+                longitude: userData.get_course(currUsername, courseName).get_longitude()
             )
             markers[0] = Location(name: "cityName", coordinate: CLLocationCoordinate2D(
-                latitude: 11.4255,
-                longitude: -131.9400
+                latitude: userData.get_course(currUsername, courseName).get_latitude(),
+                longitude: userData.get_course(currUsername, courseName).get_longitude()
             ));
 
 
