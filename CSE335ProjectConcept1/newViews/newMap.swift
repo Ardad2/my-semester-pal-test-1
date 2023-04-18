@@ -82,7 +82,7 @@ struct newMap: View {
                     NavigationLink(destination:returnView()){
 
                         
-                        Text("Go back")                            .font(.title2)
+                        Image(systemName: "checkmark.circle.fill")                         .font(.title2)
                             .bold()
                             .foregroundColor(.white)
                     }                    .padding()
