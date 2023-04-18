@@ -46,7 +46,7 @@ struct userDetails: View {
                     
                     NavigationLink(
                         
-                        destination: editUser(dataController: dataController, userData: userData, currUsername: currUsername, newFirstName: userData.get_first_name(username: currUsername), newLastName: userData.get_last_name(username: currUsername), newEmail: userData.get_email(username: currUsername), newPassword: ""),
+                        destination: editUser(dataController: dataController, userData: userData, currUsername: currUsername, statusMessage: "", newFirstName: userData.get_first_name(username: currUsername), newLastName: userData.get_last_name(username: currUsername), newEmail: userData.get_email(username: currUsername), newPassword: ""),
                         
                        // destination: HomeView(currUsername: currUsername, userData: userData),
                         label: {

@@ -150,7 +150,7 @@ struct HomeView: View {
             
             
             VStack {
-                VStack {
+
                     
                     Text("Welcome back \(userData.get_first_name(username: currUsername)) !")
                     
@@ -181,7 +181,7 @@ struct HomeView: View {
                     }.listStyle(PlainListStyle())
                     
                     
-                }
+
             }
             
         }.onAppear{getWeather()
@@ -238,13 +238,13 @@ struct HomeView: View {
                 
                 Text("\(Int(weather.temperature)) F")
             }
-            .padding()
             .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
 
         }
     }
     
+
 
         
     }
