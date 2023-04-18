@@ -114,11 +114,19 @@ struct newCourse: View {
                         destination: newMap(dataController: dataController, userData: userData, currUsername: currUsername, prevCourseName: "", newCourseName: newCourseName, newRoomName: newRoomName, startTime: startTime, endTime: endTime, newStartTime: startTime, newEndTime: endTime, days: days, message: message, prevLongitude: longitude, prevLatitude: latitude, isNew: true),
                         
                         label: {
-                            Text("Change Location")
-                        }).buttonStyle(.borderedProminent)
+                            Text("Change Location").font(.title2)
+                                .bold()
+                                .foregroundColor(.white)
+                        }).frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                           LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)                        )
+                        .cornerRadius(20)
+                        .padding()
                         .navigationTitle("Home")
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
+                    
                     
                     
                     HStack() {
