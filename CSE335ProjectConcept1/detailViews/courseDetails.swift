@@ -26,6 +26,7 @@ struct courseDetails: View {
     var body: some View {
         NavigationView {
             VStack(){
+                /*
                 HStack {
                     NavigationLink(
                        /* destination: homeScreen(courseData: courseData, taskData: taskData
@@ -54,46 +55,94 @@ struct courseDetails: View {
                         .navigationBarHidden(true)
                     
                 }
+                */
+                
+                HStack {
+                    NavigationLink(
+                        destination: HomeView(dataController:dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
+                        label: {
+                            Text("Home")
+                                .bold()
+                                .foregroundColor(.white)
+                        })
+                        .navigationTitle("Home")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarHidden(true)
+         .frame(maxWidth: .infinity)
+         .background(
+            LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+         )
+         .cornerRadius(20)
+         .padding()
+                    
+                    NavigationLink(
+                        destination: MyCoursesView(dataController: dataController, userData: userData, currUsername: currUsername),
+                        label: {
+                            Text("Back")
+                                .bold()
+                                .foregroundColor(.white)
+                        })
+                        .navigationTitle("Home")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarHidden(true)
+         .frame(maxWidth: .infinity)
+         .background(
+            LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+         )
+         .cornerRadius(20)
+         .padding()
+
+                }            .padding()
+                    .background(Color.black)
+                    .frame(height: 50)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                
+                
+                
+                
+                
+                
                 VStack(){
-                    Text(userData.get_course(currUsername, courseName).get_class_name());
-                    Text(userData.get_course(currUsername, courseName).get_room_name());
+                    Text(userData.get_course(currUsername, courseName).get_class_name()).font(.title2)
+                        .bold();
+                    Text(userData.get_course(currUsername, courseName).get_room_name()).font(.title3);
                     Text(String(userData.get_course(currUsername, courseName).get_longitude()));
                     Text(String(userData.get_course(currUsername, courseName).get_latitude()));
                     
                     
-                    HStack {
-                        Text(userData.get_course(currUsername, courseName).get_start_time_string() + " to " + userData.get_course(currUsername, courseName).get_end_time_string());
-                        HStack{
+                    HStack(alignment:.center) {
                             var days = userData.get_course(currUsername, courseName).get_days();
                             if (days[0] == 1)
                             {
-                                Text("Monday ")
+                                Text("M ")
                             }
                             if (days[1] == 1)
                             {
-                                Text("Tuesday ")
+                                Text("Tu ")
                             }
                             if (days[2] == 1)
                             {
-                                Text("Wednesday ")
+                                Text("W ")
                             }
                             if (days[3] == 1)
                             {
-                                Text("Thursday ")
+                                Text("Th ")
                             }
                             if (days[4] == 1)
                             {
-                                Text("Friday ")
+                                Text("F ")
                             }
                             if (days[5] == 1)
                             {
-                                Text("Saturday ")
+                                Text("Sa ")
                             }
                             if (days[6] == 1)
                             {
-                                Text("Sunday ")
+                                Text("Su ")
                             }
-                        }
+
+                        Text(userData.get_course(currUsername, courseName).get_start_time_string() + " to " + userData.get_course(currUsername, courseName).get_end_time_string());
+
                         Spacer();
                     }
                     
@@ -105,8 +154,16 @@ struct courseDetails: View {
 
                             
                             label: {
-                                Text("Edit Course")
-                            }).buttonStyle(.borderedProminent)
+                                Text("Edit Course").font(.title2)
+                                    .bold()
+                                    .foregroundColor(.white)
+                            }).frame(height: 50)
+                            .frame(maxWidth: .infinity)
+                            .background(
+                               LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                            )
+                            .cornerRadius(20)
+                            .padding()
                             .navigationTitle("Home")
                             .navigationBarTitleDisplayMode(.inline)
                             .navigationBarHidden(true)
@@ -117,7 +174,18 @@ struct courseDetails: View {
                             userData.delete_course(currUsername, courseName);
                             dataController.delete_course(username: currUsername, givenCourseName: courseName)
                             
-                        }, label:{Text("Delete Course")})
+                        }, label:{Text("Delete Course").font(.title2)
+                                .bold()
+                                .foregroundColor(.white)}).frame(height: 50)
+                            .frame(maxWidth: .infinity)
+                            .background(
+                               LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                            )
+                            .cornerRadius(20)
+                            .padding()
+                            .navigationTitle("Home")
+                            .navigationBarTitleDisplayMode(.inline)
+                            .navigationBarHidden(true)
                         
                     }
                     
@@ -129,7 +197,9 @@ struct courseDetails: View {
                         destination: newTask(dataController: dataController, userData: userData, currUsername: currUsername, courseName: self.courseName),
 
                         label: {
-                            Text("Add New Task")
+                            Text("Add New Task").font(.title2)
+                                .bold()
+                                .foregroundColor(.white)
                         }).buttonStyle(.borderedProminent)
                         .navigationTitle("Home")
                         .navigationBarTitleDisplayMode(.inline)
@@ -152,9 +222,17 @@ struct courseDetails: View {
                                             VStack()
                                             {
                                                 HStack {
+                                                    if (datum.get_mark() == false)
+                                                    {
+                                                        Image(systemName: "circle")
+                                                    }
+                                                    else {
+                                                        Image(systemName: "checkmark.circle.fill")
+                                                    }
                                                     Text(datum.get_task_name());
-                                                    Spacer();
-                                                }
+                                                    Text(datum.get_class_name());
+                                                    Text(datum.get_due_date_string())
+                                                    Spacer();                                                }
                                             }
                                         }
                                     }
@@ -162,7 +240,7 @@ struct courseDetails: View {
                                 
                             }
                         }
-                    }
+                    }.listStyle(PlainListStyle())
                 }
             }
         }.navigationBarHidden(true)

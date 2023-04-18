@@ -166,9 +166,17 @@ struct HomeView: View {
                         {
                             ForEach(userData.get_user(currUsername).taskData.list)
                             {
+                                
                                 datum in NavigationLink(destination: taskDetails(dataController:dataController, userData:userData, currUsername: currUsername, courseName: datum.get_class_name(), taskName: datum.get_task_name())){VStack()
                                 {
                                     HStack {
+                                        if (datum.get_mark() == false)
+                                        {
+                                            Image(systemName: "circle")
+                                        }
+                                        else {
+                                            Image(systemName: "checkmark.circle.fill")
+                                        }
                                         Text(datum.get_task_name());
                                         Text(datum.get_class_name());
                                         Text(datum.get_due_date_string())
@@ -176,6 +184,7 @@ struct HomeView: View {
                                     }
                                 }
                             }
+                                
                             }
                         }
                     }.listStyle(PlainListStyle())
