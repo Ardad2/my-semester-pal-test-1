@@ -7,7 +7,11 @@
 
 import Foundation
 
+import CoreLocation
+import MapKit
+
 import SwiftUI
+
 
 
 
@@ -21,11 +25,32 @@ struct courseDetails: View {
     @State var currUsername: String
 
     
+    private static let defaultLocation = CLLocationCoordinate2D(
+        latitude: 33.4255,
+        longitude: -111.9400
+    )
+    
+    @State private var region = MKCoordinateRegion(
+        center: defaultLocation,
+        span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        )
+    
+    @State private var markers = [
+        Location(name: "cityName", coordinate: defaultLocation)
+    ]
+    
+    
+    @State private var makers2 = [
+    ]
+    
+    @State var location: CLLocationCoordinate2D?
+    
     var courseName:String
     
     var body: some View {
         NavigationView {
             VStack(){
+
                 /*
                 HStack {
                     NavigationLink(
@@ -105,6 +130,35 @@ struct courseDetails: View {
                 VStack(){
                     Text(userData.get_course(currUsername, courseName).get_class_name()).font(.title2)
                         .bold();
+                    ZStack(alignment: .bottom)
+                    {
+                        Map(coordinateRegion: $region, interactionModes: .all, annotationItems: markers) {
+                            location in MapAnnotation(coordinate: location.coordinate)
+                            {
+                                
+                                    Text("\(location.name)")
+                                    .fontWeight(.bold)
+                                    .font(.title)
+                                    .foregroundColor(.black)
+                                    .padding()
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .stroke(Color.black
+                                                    , lineWidth: 3)
+                                    )
+                                    Text(String(location.coordinate.latitude) + "," + String(location.coordinate.longitude))
+                                
+
+                            }
+
+                            
+                        }
+                        
+
+                    }            /*.onAppear{self.getLocation(from: "New Delhi")
+                        {coordinates in
+                            print(coordinates)
+                            self.location = coordinates}*/
                     Text(userData.get_course(currUsername, courseName).get_room_name()).font(.title3);
                     Text(String(userData.get_course(currUsername, courseName).get_longitude()));
                     Text(String(userData.get_course(currUsername, courseName).get_latitude()));
@@ -244,6 +298,7 @@ struct courseDetails: View {
                 }
             }
         }.navigationBarHidden(true)
+
     }
     
 }
