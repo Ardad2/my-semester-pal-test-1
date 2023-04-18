@@ -209,8 +209,16 @@ struct editCourse: View {
                         message = "succesfully edited, new course is \(newCourseName)"
                     }) {
                         
-                        Text("Submit")
-                    }
+                        Text("Submit").font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
+                    }.frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                           LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                        )
+                        .cornerRadius(20)
+                        .padding()
                     
                 }
             }
