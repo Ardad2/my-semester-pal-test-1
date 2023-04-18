@@ -27,7 +27,7 @@ struct userDetails: View {
                                 .bold()
                                 .foregroundColor(.white)
                         })
-                       // .navigationBarHidden(true)
+                        .navigationBarHidden(true)
          .frame(maxWidth: .infinity)
          .background(
             LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
@@ -40,7 +40,6 @@ struct userDetails: View {
                     .background(Color.black)
                     .frame(height: 50)
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-                Spacer()
                 
                 VStack(spacing:15) {
                     HStack {
@@ -81,7 +80,7 @@ struct userDetails: View {
                         )
                         .cornerRadius(20)
                         .padding()
-                       // .navigationBarHidden(true)
+                        .navigationBarHidden(true)
                 
                     
                     

@@ -136,29 +136,43 @@ struct courseDetails: View {
                             location in MapAnnotation(coordinate: location.coordinate)
                             {
                                 
-                                    Text("\(location.name)")
+                                    Text("")
                                     .fontWeight(.bold)
                                     .font(.title)
                                     .foregroundColor(.black)
                                     .padding()
                                     .overlay(
-                                        RoundedRectangle(cornerRadius: 20)
+                                        Circle()
                                             .stroke(Color.black
                                                     , lineWidth: 3)
                                     )
-                                    Text(String(location.coordinate.latitude) + "," + String(location.coordinate.longitude))
                                 
 
                             }
 
                             
+                        }.onAppear{
+                            region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude:  userData.get_course(currUsername, courseName).get_latitude(), longitude: userData.get_course(currUsername, courseName).get_longitude()), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+
+                            /*
+                            region.center = CLLocationCoordinate2D(
+                            latitude: userData.get_course(currUsername, courseName).get_latitude(),
+                            longitude:userData.get_course(currUsername, courseName).get_longitude()
+                        )
+                            
+                            markers[0] = Location(name: "", coordinate: CLLocationCoordinate2D(
+                                latitude: userData.get_course(currUsername, courseName).get_latitude(),
+                                longitude:userData.get_course(currUsername, courseName).get_longitude()
+                            )
+)*/
+                            
                         }
                         
 
-                    }            /*.onAppear{self.getLocation(from: "New Delhi")
-                        {coordinates in
-                            print(coordinates)
-                            self.location = coordinates}*/
+                    }
+                      
+                            
+                
                     Text(userData.get_course(currUsername, courseName).get_room_name()).font(.title3);
                     Text(String(userData.get_course(currUsername, courseName).get_longitude()));
                     Text(String(userData.get_course(currUsername, courseName).get_latitude()));
