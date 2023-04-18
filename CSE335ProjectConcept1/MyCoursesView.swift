@@ -66,6 +66,7 @@ struct MyCoursesView: View {
                         .navigationBarHidden(true)
                     
                     VStack {
+                        
                         List {
                             Section(header: ListHeader1())
                             {
@@ -113,7 +114,8 @@ struct MyCoursesView: View {
                                     }
                                 }
                             }
-                        }
+                        }                    .listStyle(PlainListStyle())
+
                     }
 
                 }

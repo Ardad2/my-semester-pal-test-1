@@ -173,8 +173,10 @@ struct newCourse: View {
                         {
                             days[6] = 1;
                         }
+                        print(longitude);
                         
                         userData.add_course(currUsername, newCourseName, newRoomName, days, startTime, endTime, longitude, latitude)
+                        
                         
                         
                         

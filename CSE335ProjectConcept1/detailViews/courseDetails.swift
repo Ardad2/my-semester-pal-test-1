@@ -57,6 +57,9 @@ struct courseDetails: View {
                 VStack(){
                     Text(userData.get_course(currUsername, courseName).get_class_name());
                     Text(userData.get_course(currUsername, courseName).get_room_name());
+                    Text(String(userData.get_course(currUsername, courseName).get_longitude()));
+                    Text(String(userData.get_course(currUsername, courseName).get_latitude()));
+                    
                     
                     HStack {
                         Text(userData.get_course(currUsername, courseName).get_start_time_string() + " to " + userData.get_course(currUsername, courseName).get_end_time_string());

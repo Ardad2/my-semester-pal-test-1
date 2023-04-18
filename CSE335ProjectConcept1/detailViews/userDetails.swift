@@ -18,21 +18,31 @@ struct userDetails: View {
     var body: some View {
         NavigationView {
             VStack() {
+
                 HStack {
                     NavigationLink(
-                       /* destination: homeScreen(courseData: courseData, taskData: taskData
-                                               ),*/
-                        
                         destination: HomeView(dataController: dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
-
-                        
                         label: {
                             Text("Home")
-                        }).buttonStyle(.borderedProminent)
+                                .bold()
+                                .foregroundColor(.white)
+                        })
                         .navigationTitle("Home")
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
-                }
+         .frame(maxWidth: .infinity)
+         .background(
+            LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+         )
+         .cornerRadius(20)
+         .padding()
+                    
+
+                }            .padding()
+                    .background(Color.black)
+                    .frame(height: 50)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+                
                 VStack() {
                     HStack {
                         Text("Name: ")
