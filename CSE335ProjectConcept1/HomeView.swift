@@ -97,14 +97,13 @@ struct HomeView: View {
                 NavigationLink(
                     destination: userDetails(dataController:dataController, userData: userData, currUsername: currUsername),
                     label: {
-                        Text("\(currUsername)")         .font(.title2)
+                        Text("\(currUsername)")
                             .bold()
                             .foregroundColor(.white)
                     })
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
-                    .frame(height: 50)
      .frame(maxWidth: .infinity)
      .background(
         LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
@@ -115,14 +114,13 @@ struct HomeView: View {
                 NavigationLink(
                     destination: MyCoursesView(dataController:dataController, userData:userData, currUsername: currUsername),
                     label: {
-                        Text("My Courses")
+                        Text("Courses")
                             .bold()
                             .foregroundColor(.white)
                     })
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
-                    .frame(height: 50)
      .frame(maxWidth: .infinity)
      .background(
         LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
@@ -132,14 +130,13 @@ struct HomeView: View {
                 NavigationLink(
                     destination: LoginView(loginStatus:"Successfully logged out", userData: userData, dataController: dataController),
                     label: {
-                        Text("Log Out")         .font(.title2)
+                        Text("Log Out")
                             .bold()
                             .foregroundColor(.white)
                     })
                     .navigationTitle("Home")
                     .navigationBarTitleDisplayMode(.inline)
                     .navigationBarHidden(true)
-                    .frame(height: 50)
      .frame(maxWidth: .infinity)
      .background(
         LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
@@ -148,6 +145,7 @@ struct HomeView: View {
      .padding()
             }            .padding()
                 .background(Color.black)
+                .frame(height: 50)
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
             
             

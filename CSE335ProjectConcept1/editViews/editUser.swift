@@ -16,6 +16,7 @@ struct editUser: View {
     
     @ObservedObject var userData:userDictionary = userDictionary()
     @State var currUsername: String
+    @State var statusMessage: String
     
     @State var newFirstName:String
     @State var newLastName:String
@@ -27,17 +28,42 @@ struct editUser: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading, spacing: 15)
+            VStack(alignment: .leading)
             {
-                Spacer()
+                NavigationLink(
+                   /* destination: homeScreen(courseData: courseData, taskData: taskData
+                                           ),*/
+                    
+                    destination: HomeView(dataController: dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
+
+                    
+                    label: {
+                        Text("Home")
+                    })
+                    .navigationTitle("Go Back").font(.title2)
+                    .bold()
+                    .foregroundColor(.white)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarHidden(true)
+                    .frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                           LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                        )
+                        .cornerRadius(20)
+                        .padding()
                 
                 Text("Editing Profile for \(currUsername)")                        .font(.title)
                     .bold()
+                
             .frame(height: 50)
             .frame(maxWidth: .infinity)
             .cornerRadius(20)
             .padding()
                 
+                
+                
+                Text("\(statusMessage)")
                 TextField("First Name", text: $newFirstName).padding(10).overlay {
                     RoundedRectangle(cornerRadius: 10) .stroke(.black, lineWidth: 2)
                 }.padding(.horizontal)
@@ -67,6 +93,7 @@ struct editUser: View {
 
                             userData.change_profile_details(currUsername, newPassword, newEmail, newFirstName, newLastName)
                         dataController.change_profile_details(username: currUsername, newPassword: newPassword, newEmail: newEmail, newFirstName: newFirstName, newLastName: newLastName)
+                        statusMessage = "Succesfully made changes"
                         
                         
                     }
@@ -85,19 +112,8 @@ struct editUser: View {
                             .cornerRadius(20)
                             .padding()
                     
-                    NavigationLink(
-                       /* destination: homeScreen(courseData: courseData, taskData: taskData
-                                               ),*/
-                        
-                        destination: HomeView(dataController: dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
 
-                        
-                        label: {
-                            Text("Home")
-                        }).buttonStyle(.borderedProminent)
-                        .navigationTitle("Go Back")
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationBarHidden(true)
+                    
                         
   /*                      Text("Go Back")
                             .foregroundColor(.black)
