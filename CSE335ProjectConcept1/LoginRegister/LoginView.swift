@@ -170,6 +170,7 @@ struct LoginView: View {
                 newDays[6] = Int(courses.day6)
                 
                 
+                
                 userData.add_course(courses.username!, courses.courseName!, courses.roomName!, newDays, courses.startTime!, courses.endTime!, courses.longitude, courses.latitude)
             }
              

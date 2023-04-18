@@ -320,7 +320,7 @@ class coreDataController : ObservableObject
     {
         for tasks in getTasks()
         {
-            if ( (tasks.username == username) && (tasks.courseName == oldClassName))
+            if ( (tasks.username == username) && (tasks.courseName  == oldClassName))
             {
     
                 /*

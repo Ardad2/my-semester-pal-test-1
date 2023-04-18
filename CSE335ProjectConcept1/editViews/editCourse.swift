@@ -201,7 +201,7 @@ struct editCourse: View {
                         {
                             days[6] = 1;
                         }
-                        
+                        print(longitude)
                         userData.edit_course(currUsername, prevCourseName, newCourseName, newRoomName, days, newStartTime, newEndTime, longitude, latitude)
                         dataController.edit_course(username: currUsername, courseName: prevCourseName, newClassName: newCourseName, newRoomName: newRoomName, newDays: days, newStartTime: newStartTime, newEndTime: newEndTime, newLongitude: longitude, newLatitude: latitude)
                         userData.update_task_class(currUsername, prevCourseName, newCourseName)
