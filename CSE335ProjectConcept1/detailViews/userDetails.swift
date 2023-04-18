@@ -27,9 +27,7 @@ struct userDetails: View {
                                 .bold()
                                 .foregroundColor(.white)
                         })
-                        .navigationTitle("Home")
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationBarHidden(true)
+                       // .navigationBarHidden(true)
          .frame(maxWidth: .infinity)
          .background(
             LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
@@ -44,16 +42,26 @@ struct userDetails: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
                 Spacer()
                 
-                VStack() {
+                VStack(spacing:15) {
                     HStack {
+                        Text("Username: ").font(.title2)
+                        Text("\(currUsername)").font(.title2)
+                            .bold()
+                    }
+                    HStack {
+                        Text("Name: ").font(.title2)
                         Text("\(userData.get_first_name(username: currUsername)) \(userData.get_last_name(username: currUsername))  ").font(.title2)
                             .bold()
                     }
                     HStack {
+                        Text("Email Address: ").font(.title2)
+
                         Text("\(userData.get_email(username: currUsername))").font(.title2)
                             .bold()
                     }
                 }
+                Spacer()
+                
                 VStack {
                     
                     
@@ -63,12 +71,19 @@ struct userDetails: View {
                         
                         // destination: HomeView(currUsername: currUsername, userData: userData),
                         label: {
-                            Text("Edit Profile")
-                        }).buttonStyle(.borderedProminent)
-                        .navigationTitle("Home")
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationBarHidden(true)
-                }
+                            Text("Edit Profile").font(.title2)
+                                .bold()
+                                .foregroundColor(.white)
+                        }).frame(height: 50)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                           LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+                        )
+                        .cornerRadius(20)
+                        .padding()
+                       // .navigationBarHidden(true)
+                
+                    
                     
                 }
             }

@@ -46,28 +46,51 @@ struct newCourse: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 15){
+                
                 HStack {
                     NavigationLink(
                         destination: HomeView(dataController:dataController, currUsername: currUsername, userData: userData, displayEarthquakes: [], address: "Tempe", lon:-111.9400, lat: 33.4255, temp: "0"),
-                        
                         label: {
                             Text("Home")
-                        }).buttonStyle(.borderedProminent)
+                                .bold()
+                                .foregroundColor(.white)
+                        })
                         .navigationTitle("Home")
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
-                    NavigationLink(
-                        /* destination: myCourses(courseData: courseData, taskData: taskData
-                         ),*/
-                        destination: MyCoursesView(dataController: dataController, userData: userData, currUsername: currUsername),
-                        label: {
-                            Text("Go Back to Courses")
-                        }).buttonStyle(.borderedProminent)
-                        .navigationTitle("Home")
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationBarHidden(true)
+         .frame(maxWidth: .infinity)
+         .background(
+            LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+         )
+         .cornerRadius(20)
+         .padding()
                     
-                }
+                    NavigationLink(
+                        destination: MyCoursesView(dataController:dataController, userData:userData, currUsername: currUsername),
+                        label: {
+                            Text("Back")
+                                .bold()
+                                .foregroundColor(.white)
+                        })
+                        .navigationTitle("Home")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarHidden(true)
+         .frame(maxWidth: .infinity)
+         .background(
+            LinearGradient(colors: [.black],                   startPoint: .topLeading,                   endPoint: .bottomTrailing)
+         )
+         .cornerRadius(20)
+         .padding()
+
+                }            .padding()
+                    .background(Color.black)
+                    .frame(height: 50)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+                
+                
+                
+                
+
                 VStack(){
                     Text("Creating New Course")
                     Text("\(message)")
@@ -184,7 +207,9 @@ struct newCourse: View {
                         
                         message = "Succesfully added Course \(newCourseName)"
                     }) {
-                        Text("Submit")
+                        Text("Submit").font(.title2)
+                            .bold()
+                            .foregroundColor(.white)
                     }.frame(height: 50)
                         .frame(maxWidth: .infinity)
                         .background(
