@@ -77,9 +77,8 @@ struct newTask: View {
                 
                 
                 
-                
 
-                VStack(){
+                VStack(spacing:15){
                     Text("Create New Task").font(.title2)
                         .bold()
                     Text("\(courseName)").font(.title3)
