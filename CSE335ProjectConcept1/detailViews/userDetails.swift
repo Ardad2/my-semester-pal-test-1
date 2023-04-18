@@ -42,29 +42,33 @@ struct userDetails: View {
                     .background(Color.black)
                     .frame(height: 50)
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+                Spacer()
                 
                 VStack() {
                     HStack {
-                        Text("Name: ")
-                        Text("\(userData.get_first_name(username: currUsername)) \(userData.get_last_name(username: currUsername))  ")
+                        Text("\(userData.get_first_name(username: currUsername)) \(userData.get_last_name(username: currUsername))  ").font(.title2)
+                            .bold()
                     }
                     HStack {
-                        Text("Email: ")
-                        Text("\(userData.get_email(username: currUsername))")
+                        Text("\(userData.get_email(username: currUsername))").font(.title2)
+                            .bold()
                     }
-
+                }
+                VStack {
+                    
                     
                     NavigationLink(
                         
                         destination: editUser(dataController: dataController, userData: userData, currUsername: currUsername, statusMessage: "", newFirstName: userData.get_first_name(username: currUsername), newLastName: userData.get_last_name(username: currUsername), newEmail: userData.get_email(username: currUsername), newPassword: ""),
                         
-                       // destination: HomeView(currUsername: currUsername, userData: userData),
+                        // destination: HomeView(currUsername: currUsername, userData: userData),
                         label: {
                             Text("Edit Profile")
                         }).buttonStyle(.borderedProminent)
                         .navigationTitle("Home")
                         .navigationBarTitleDisplayMode(.inline)
                         .navigationBarHidden(true)
+                }
                     
                 }
             }
